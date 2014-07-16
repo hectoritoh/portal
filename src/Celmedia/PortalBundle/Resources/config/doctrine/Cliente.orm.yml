@@ -1,0 +1,44 @@
+Celmedia\PortalBundle\Entity\Cliente:
+    type: entity
+    table: cliente
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        nombre:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+        edad:
+            type: integer
+            nullable: true
+        nacionalidad:
+            type: integer
+            nullable: true
+        correo:
+            type: string
+            nullable: false
+        telefono:
+            type: string
+            nullable: false
+        operadora:
+            type: string
+            nullable: false
+        sexo:
+            type: string
+            length: 1
+            nullable: false
+        cumpleanos:
+            type: datetime
+            nullable: false
+    manyToOne:
+      grupos:
+        targetEntity: GrupoEnvio 
+        inversedBy: registros
+
+    lifecycleCallbacks: {  }

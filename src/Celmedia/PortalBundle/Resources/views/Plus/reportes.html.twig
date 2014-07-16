@@ -1,0 +1,195 @@
+{% extends("CelmediaPortalBundle::layout.plus.html.twig") %}
+{% block title %}Reporte de Campaña{% endblock %}
+
+{% block contenido %}
+<div class="container">
+    <div class="row">
+
+
+
+
+        <div class="span10 offset1 bs-docs-sidebar">
+
+
+
+            {% for flashMessage in app.session.flashbag.get('mensaje') %}
+            <div class="flash-notice alert alert-success">
+              {{ flashMessage }}
+          </div>
+          {% endfor %}
+
+
+
+          <div class="card">
+              <h3 class="card-heading simple">Reporte de campañas</h3>
+              <div class="card-body">
+                <div class="row">
+                    <div class="span10 offset1">
+                        <form id="target" class="form-horizontal"  action="#" method="post" >
+                            <div class="control-group">
+                                <label class="control-label" for="grupos">Campañas</label>
+                                <div class="controls">
+
+                                    <div class="input-append">
+                                        <select name="grupos" id="grupos">
+
+
+                                         {% for campana in usuario.campanas %}
+
+                                         <option value="{{  path('detalle_reporte' , {  id_campana : campana.id }) }}">{{  campana.nombre }}</option>
+                                         {% endfor %}
+
+
+
+                                     </select>
+
+
+                                 </div>
+                             </div>
+                         </div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+     <div id="listaGrupos">
+
+     </div>
+
+
+
+ </div>
+</div>
+</div>
+
+
+
+
+<div id="modalCrearGrupo" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+  {{ render(controller( "CelmediaPortalBundle:Default:clientesForm" )) }}
+
+</div>
+
+
+{% endblock %}
+
+
+{%  block js %}
+{{ parent() }}
+
+
+{% javascripts
+  '@CelmediaPortalBundle/Resources/public/libs/flot/excanvas.min.js' 
+  '@CelmediaPortalBundle/Resources/public/libs/flot/jquery.flot.min.js' 
+  '@CelmediaPortalBundle/Resources/public/libs/flot/jquery.flot.pie.min.js' 
+  '@CelmediaPortalBundle/Resources/public/libs/flot/jquery.flot.resize.min.js' 
+  
+  %}
+  <script  type="text/javascript" src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+
+
+
+
+
+  <script type="text/javascript" >
+
+
+
+    function crearReporte( url_reporte ){
+
+        $.getJSON(  url_reporte , function(response){
+
+
+            $.plot('#generos_reporte', response.genero , {
+                series: {
+                    pie: {
+                        show: true
+                    },
+                    grid: {
+                        hoverable: true,
+                        clickable: true
+                    }, legend: {
+                        show: false
+                    }
+                }
+            });
+
+
+            $.plot('#edades_reporte', response.edades , {
+                series: {
+                    pie: {
+                        show: true
+                    },
+                    grid: {
+                        hoverable: true,
+                        clickable: true
+                    }, legend: {
+                        show: false
+                    }
+                }
+            });
+
+            $.plot('#operadoras_reporte', response.operadoras , {
+                series: {
+                    pie: {
+                        show: true
+                    },
+                    grid: {
+                        hoverable: true,
+                        clickable: true
+                    }, legend: {
+                        show: false
+                    }
+                }
+            });
+
+
+
+            $.plot('#efectividad_reporte', response.efectividad , {
+                series: {
+                    pie: {
+                        show: true
+                    },
+                    grid: {
+                        hoverable: true,
+                        clickable: true
+                    }, legend: {
+                        show: false
+                    }
+                }
+            });
+
+
+
+        });
+
+
+
+
+
+
+
+    }
+
+
+
+    function actualizarLista() {
+        $("#listaGrupos").load($("#grupos").val());
+    }
+
+
+    $(document).ready(function() {
+        $("#grupos").change(function() {
+            actualizarLista();
+        });
+        actualizarLista();
+    });
+
+
+</script>
+
+
+{% endblock %}

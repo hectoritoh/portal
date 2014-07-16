@@ -1,0 +1,122 @@
+{%   extends("CelmediaPortalBundle::layout.html.twig") %}
+
+{% block title %}Configura tu mensaje!{% endblock %}
+
+
+
+{% block contenido %}
+
+
+<style>
+  
+  .setup_item{
+    display: none;
+  }
+</style>
+
+
+
+
+
+<div id="page-wrapper">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Portal SMS <small>Promociones</small></h1>
+    {#   <ol class="breadcrumb">
+        <li class="active"><i class="fa fa-home"></i> Definicion de publico</li>
+        <li class="active"><i class="fa fa-home"></i> Seleccion de tipo de mensaje</li>
+        <li class="active"><i class="fa fa-home"></i> Promociones</li>
+        <li class="active"><i class="fa fa-home"></i> Promociones</li>
+        <li class="active"><i class="fa fa-home"></i> Promociones</li>
+        <li class="active"><i class="fa fa-home"></i> Promociones</li>
+        <li class="active"><i class="fa fa-home"></i> Promociones</li>
+      </ol> #}
+      
+    </div>
+  </div><!-- /.row -->
+
+
+  <div class="row">
+     
+    <div >
+     <div   id="paso1" class="setup_item current_item" style="display:block;" >
+       {{ render(controller('CelmediaPortalBundle:Default:targetBlock')) }}
+     </div>     
+     <div   id="paso2" class="setup_item " >
+       {{ render(controller('CelmediaPortalBundle:Default:tipoMensaje')) }}
+     </div>
+     <div   id="tarjeta" class="setup_item " >
+       {{ render(controller('CelmediaPortalBundle:Default:mensaje')) }}
+     </div>
+     <div   id="mensaje" class="setup_item " >
+       {{ render(controller('CelmediaPortalBundle:Default:tarjeta')) }}
+     </div>
+     <div   id="paso3" class="setup_item " >
+       {{ render(controller('CelmediaPortalBundle:Default:preview')) }}
+     </div>
+   </div>
+
+
+ </div><!-- /.row -->
+ 
+
+</div><!-- /#page-wrapper -->
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+
+
+  function showPaso2(){
+
+    $(".setup_item ").effect('drop');
+    $("#paso2").slideDown();
+
+
+  }
+
+
+
+
+  function showPaso3(){
+
+    $(".setup_item ").effect('drop');
+    $("#paso3").slideDown();
+
+
+  }
+
+
+  function mostrarIngresoTarjeta(){
+
+    $("#paso2").effect('drop');
+    $("#tarjeta").slideDown();
+
+
+
+  }
+
+
+  function mostrarMenuSms(){
+
+
+    $("#paso2").effect('drop');
+    $("#mensaje").slideDown();
+
+
+  }
+
+
+
+
+</script>
+
+{% endblock %}
+

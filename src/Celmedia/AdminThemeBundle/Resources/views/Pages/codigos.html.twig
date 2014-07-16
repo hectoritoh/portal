@@ -1,0 +1,57 @@
+{% extends "CelmediaAdminThemeBundle::template.html.twig" %}
+
+{% block content %}
+
+
+
+<div class="widget stacked widget-table action-table">
+
+	<div class="widget-header">
+		<i class="icon-th-list"></i>
+		<h3>Listado de codigos registrados ({{ pagination.getTotalItemCount }}) </h3>
+	</div> <!-- /widget-header -->
+
+	<div class="widget-content">
+
+		<table class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>Codigo</th>
+					<th>Puntos</th>
+					<th>Estado</th>
+					<th class="td-actions"></th>
+				</tr>
+			</thead>
+			<tbody>
+
+
+				{% for codigo in pagination %}
+				<tr>
+					<td>{{  codigo.valor }}</td>
+					<td>{{ codigo.puntos }}</td>
+					<td>{% if codigo.estado == 0 %} Canjeado  {% else %} Sin Canjear
+						{% endif %} 
+					</td>
+					<td class="td-actions">
+						<a href="javascript:;" class="btn btn-xs btn-primary">
+							<i class="btn-icon-only icon-ok"></i>										
+						</a>
+					</td>
+				</tr>
+				{% endfor %}
+
+
+			</tbody>
+		</table>
+
+		<div class="navigation">
+			{{ knp_pagination_render(pagination, "", {}, { "prev_label": "Anterior", "next_label": "Siguiente", "first_label": "Primero", "last_label": "Ultimo"}) }}
+		</div>
+	</div> <!-- /widget-content -->
+
+</div> <!-- /widget -->
+
+
+
+
+{% endblock %}

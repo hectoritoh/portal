@@ -1,0 +1,197 @@
+{%   extends("CelmediaPortalBundle::layout.plus.html.twig") %}
+
+{% block title %}Configura tu mensaje!{% endblock %}
+
+
+  {% block estilos %}
+    {{ parent() }}
+  {% stylesheets 
+  '@CelmediaPortalBundle/Resources/public/libs/bootstrap-select/bootstrap-select.min.css'   
+  '@CelmediaPortalBundle/Resources/public/libs/bootstrap-select/bootstrap-select.min.css'   
+  '@CelmediaPortalBundle/Resources/public/libs/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css'   
+
+  filter='cssrewrite' %}
+  <link rel="stylesheet" href="{{ asset_url }}" />
+  {% endstylesheets %} 
+  {% endblock %}
+
+
+{% block contenido %}
+
+<div class="container">
+    
+    
+
+    <div class="row  wizard-tabs-wrap " >
+ 
+        <div class="span12" >
+            <div class="btn-group" style="width: 100%;" >
+                <button type="button"  id="paso1Wizard" class="btn wizard-step btn-default active"> 
+                    <i class="fa fa-dot-circle-o fa-2x pull-left"></i> Target
+                </button>
+                <button type="button" id="paso2Wizard" class="btn wizard-step btn-default">
+                    <i class="fa fa-envelope-o fa-2x pull-left"></i>Tipo mensaje</button>
+                <button type="button" id="paso3Wizard" class="btn wizard-step btn-default">
+                    <i class="fa fa-edit fa-2x pull-left"></i>
+                    Mensaje</button>
+                <button type="button"  id="paso4Wizard" class="btn wizard-step btn-default">
+                    <i class="fa fa-check fa-2x pull-left"></i>
+                    Envio</button>
+            </div>
+        </div>
+
+    </div>
+    
+    
+    
+    
+
+    <div class="row">
+
+        <div class="span12  ">
+
+            <div>
+                <section   id="paso1" class="setup_block setup_item current_item" style="display:block;" >
+                    <div class="card">
+                        <h3 class="card-heading simple">Definir Publico Target</h3>
+                        <div  id="paso1Contenido" class="card-body">
+           {{ render(controller('CelmediaPortalBundle:Default:targetBlock')) }}
+                        </div>
+                    </div>
+                </section>     
+            </div>
+
+            <div>
+                <section   id="paso2" class="setup_item setup_block " style="display:none;" >
+                    <div class="card">
+                        <h3 class="card-heading simple">Seleccione el tipo de mensaje</h3>
+                        <div class="card-body">
+          {{ render(controller('CelmediaPortalBundle:Default:tipoMensaje')) }}
+                        </div>
+                    </div>
+                </section>     
+            </div>
+
+            <div>
+
+                <section   id="mensaje" class="setup_item setup_block " style="display:none;" >
+                    <div class="card">
+                        <h3  id="mensajeTitulo" class="card-heading simple">
+                            <i class="fa fa-envelope fa-1x"></i>
+                            Configure el mensaje de texto</h3>
+                        <div  id="mensajeContenido" class="card-body">
+           {{ render(controller('CelmediaPortalBundle:Default:mensaje')) }}
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+
+
+            <div>
+
+                <section   id="email" class="setup_item setup_block " style="display:none;" >
+                    <div class="card">
+                        <h3  id="emailTitulo" class="card-heading simple">
+                            <i class="fa fa-envelope fa-1x"></i>
+                            Configure el Correo electronico</h3>
+                        <div  id="emailContenido" class="card-body">
+           {{ render(controller('CelmediaPortalBundle:Default:email')) }}
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+
+            
+
+            <div>
+
+                <section   id="emailTarjeta" class="setup_item setup_block " style="display:none;" >
+                    <div class="card">
+                        <h3  id="emailTitulo" class="card-heading simple">
+                            <i class="fa fa-envelope fa-1x"></i>
+                            Configure la Tarjeta email </h3>
+                        <div  id="emailTarjetaContenido" class="card-body">
+                            {{ render(controller('CelmediaPortalBundle:Default:emailTarjeta')) }}
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+
+
+
+            <div>
+                <section   id="tarjeta" class="setup_item setup_block "   style="display:none;">
+                    <div class="card">
+                        <h3 id="tarjetaTitulo" class="card-heading simple">
+                            <i class="fa fa-credit-card fa-2x"></i>
+                            Configure la Tarjeta</h3>
+                        <div  id="tarjetaContenido"  class="card-body">
+           {{ render(controller('CelmediaPortalBundle:Default:tarjeta')) }}
+                        </div>
+                    </div> 
+                </section>
+
+            </div>
+
+            <div>
+
+                <section   id="paso3" class="setup_item setup_block "   style="display:none;">
+                    <div class="card">
+                        <h3 class="card-heading simple">
+
+                            Resumen de Campana</h3>
+                        <div class="card-body"  id="contenido_resumen">
+                            contendo resumen 
+                        </div>
+                    </div> 
+                </section>
+
+            </div>
+
+            <section   id="paso4" class="setup_item setup_block "   style="display:none;">
+                <div class="card">
+                    <h3 class="card-heading simple">
+                        Finalizar</h3>
+                    <div class="card-body">
+         {{ render(controller('CelmediaPortalBundle:Default:preview')) }}
+                    </div>
+                </div> 
+            </section>
+
+        </div>
+
+    </div>
+</div> 
+
+
+
+
+
+{% endblock %}
+
+
+{%  block js %}
+{{ parent() }}
+
+{% javascripts
+  '@CelmediaPortalBundle/Resources/public/js/form.js'     
+  '@CelmediaPortalBundle/Resources/public/libs/bootstrap-select/bootstrap-select.min.js'     
+  '@CelmediaPortalBundle/Resources/public/libs/bootstrap-maxlength/bootstrap-maxlength.min.js'     
+  '@CelmediaPortalBundle/Resources/public/libs/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js'     
+  %}
+<script  type="text/javascript" src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+
+<script  type="text/javascript" >
+    setRutaAjaxPreview('{{ path('ajax_get_tarjeta_preview') }}');
+    ruta_imagenes = "{{  asset('uploads/tiposTarjetas') }}";
+    
+</script>
+
+  {% endblock %}

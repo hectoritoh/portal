@@ -1,0 +1,29 @@
+Celmedia\PortalBundle\Entity\Usuario:
+    type:  entity
+    table: fos_user
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+
+
+    oneToMany:
+        campanas:
+            targetEntity: Campana
+            mappedBy: usuario
+
+
+    manyToMany:
+        grupos:
+            targetEntity: Grupo
+            joinTable:
+                name: fos_user_group_2
+                joinColumns:
+                    user_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    group_id:
+                        referencedColumnName: id
+                unique: true
+              

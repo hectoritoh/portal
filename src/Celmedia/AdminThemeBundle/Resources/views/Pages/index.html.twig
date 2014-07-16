@@ -1,0 +1,56 @@
+{% extends "CelmediaAdminThemeBundle::template.html.twig" %}
+
+{% block content %}
+
+ 
+
+  <div class="widget stacked">
+
+    <div class="widget-header">
+     <i class="icon-bookmark"></i>
+     <h3>Accesos Rapidos</h3>
+   </div> <!-- /widget-header -->
+
+   <div class="widget-content">
+
+     <div class="shortcuts">
+
+      <a href="{{   path('celmedia_admin_theme_participantes') }}" class="shortcut">
+       <i class="shortcut-icon icon-user"></i>
+       <span class="shortcut-label">Participantes Registrados</span>
+     </a>
+
+     <a href="{{   path('celmedia_admin_theme_codigos') }}"  class="shortcut">
+       <i class="shortcut-icon icon-tag"></i>
+       <span class="shortcut-label">Codigos Canjeados</span>
+     </a>       
+   </div> <!-- /shortcuts --> 
+
+ </div> <!-- /widget-content -->
+
+</div> <!-- /widget --> 
+
+
+
+
+
+{% endblock %}
+
+
+{% block js_extra %}
+    
+
+
+  {% javascripts 
+  '@CelmediaAdminThemeBundle/Resources/public/js/plugins/flot/jquery.flot.js'
+  '@CelmediaAdminThemeBundle/Resources/public/js/plugins/flot/jquery.flot.pie.js'
+  '@CelmediaAdminThemeBundle/Resources/public/js/plugins/flot/jquery.flot.resize.js'
+
+  %}
+  <script type="text/javascript" src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+
+  {% endblock %}
+
+
+  

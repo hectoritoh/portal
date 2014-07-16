@@ -1,0 +1,100 @@
+
+@font-face {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 200;
+	src: local('Raleway ExtraLight'), local('Raleway-ExtraLight'), url(../../bundles/celmediaportal/font/relaway_light.woff) format('woff');
+}
+@font-face {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Raleway'), url(../../bundles/celmediaportal/font/relaway.woff) format('woff');
+}
+
+
+
+.jumbotron{
+	background: url('../../bundles/celmediaportal/images/banner.jpg');
+	height: 433px;
+	padding: 0px !important;
+}
+
+
+.hero-unit {
+	border-radius: 0;
+	padding: 0px !important;
+}
+
+
+.paso1_color{
+	color: #31708F;
+	border-width: 0px;
+}
+
+.paso2_color{
+	border-width: 0px;
+	color: #8A6D3B;
+}
+
+.paso3_color{
+	border-width: 0px;
+	color: #3C763D;
+}
+
+.paso1_card{
+	background-color: #9DD2EC;
+	border-color: #31708F;
+	border-width: 1px;
+}
+
+.paso2_card{
+	background-color: #F6E690;
+	border-color: #8A6D3B;	
+	border-width: 1px;
+}
+
+.paso3_card{
+	background-color: #A9E092;
+	border-color: #3C763D;
+	border-width: 1px;
+}
+
+h3.paso1_color{
+	border-bottom: 0px solid #31708F !important;
+	color: #31708F !important; 
+}
+
+h3.paso2_color{
+	border-bottom: 0px solid #8A6D3B !important;
+	color: #8A6D3B !important;
+}
+
+h3.paso3_color{
+	border-bottom: 0px solid #3C763D !important;
+	color: #3C763D !important; 
+}
+
+
+.selectpicker li.selected a{
+    font-weight: bold;
+}
+
+.tabs-items{
+    text-align: center;
+}
+
+ 
+
+.arrow-right {
+	width: 0; 
+	height: 0; 
+	border-top: 60px solid transparent;
+	border-bottom: 60px solid transparent;	
+	border-left: 30px solid green;
+}
+.wizard-step{
+    width: 25%;
+    height: 60px;
+    font-size: 16px !important;
+}

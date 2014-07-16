@@ -1,0 +1,33 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  <h3 id="myModalLabel">Creacion de nuevo grupo de clientes</h3>
+</div>
+
+
+{{  form_errors(  formGrupo ) }}
+
+<form action="{{  path('clientes_form') }}"  method="post" >
+  <div class="modal-body">
+
+    <fieldset>
+
+      <label>Nombre de grupo</label>
+      {{ form_widget(formGrupo.nombre , {'attr' : { 'placeholder' : 'ejemplo clientes de trabajo' }}) }} 
+      
+      {# <input type="text" placeholder="ejemplo clientes de trabajo"> #}
+      <span class="help-block">Este es el nombre con el que el identificaras el grupo de clientes .</span>
+
+      <label>Tipo de grupo</label>
+
+      {{  form_widget(formGrupo.tipo ) }}
+      <span class="help-block">Los publicos podran ser usados en otras campanas por todos los usuarios, los privados solo seran de su uso.</span>
+
+    </fieldset>
+  {{  form_widget(formGrupo._token ) }}
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+    <button class="btn btn-primary">Grabar</button>
+  </div>
+
+</form>

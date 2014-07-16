@@ -1,0 +1,14 @@
+parameters:
+#    celmedia_portal.example.class: Celmedia\PortalBundle\Example
+# Acme/DemoBundle/Resources/config/admin.yml
+services:
+#    sonata.admin.post:
+#        class: Celmedia\PortalBundle\Admin\UsuarioAdmin
+#        tags:
+#            - { name: sonata.admin, manager_type: orm, group: "Seguridad", label: "Usuario" }
+#        arguments:
+#            - ~
+#            - Acme\DemoBundle\Entity\Post
+#            - ~
+#        calls:
+#            - [ setTranslationDomain, [AcmeDemoBundle]]

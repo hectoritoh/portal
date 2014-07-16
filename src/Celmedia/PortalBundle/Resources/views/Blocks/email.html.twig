@@ -1,0 +1,67 @@
+ 
+<h3>Campaña  "{{  campana.nombre }}" </h3>
+
+
+<div class="form_wrapper">
+
+  {{  form_errors(  form) }}
+
+
+  {% form_theme form 'CelmediaPortalBundle:Form:boostrap.form.html.twig' %}
+
+  <form class="form-horizontal" id="emailForm"  action="{{  path('email') }}" method="post" {{ form_enctype(form) }} >
+
+
+
+    {{ form_row(form.nombre   ,  { 'label' :'Titulo'} ) }}
+    {{ form_row(form.fechaEnvio   ,  {'attr': {'class': ' fecha ' , 'readonly': 'readonly' , 'style':'cursor:pointer;' }} ) }}
+
+    {{ form_row(form.cantidadMensajes ) }}
+
+    {{ form_row(form.contenidoMensaje , {'attr':{   'maxlength':"150" }} ) }}
+
+
+    {{ form_row(  form._token ) }}
+  </form>
+
+  
+
+
+<div class="nextBox">
+
+  <div class="row">
+    
+    <div class="span2">
+      <button class="btn btn-warning pull-right" onclick="mostrarPaso( '#paso2' , this );" >Regresar</button>  
+    </div>
+    <div class="span6">
+       <button class="btn btn-warning pull-right" type="button"   onclick="$('#emailForm').submit();"  >Siguiente</button>  
+    </div>
+
+  </div>
+</div>
+
+
+
+</div>
+
+{% if completado %}
+
+<script  type="text/javascript" >  
+
+mostrarPaso( "#paso3" , undefined , "{{  path('resumen') }}" );
+</script>
+
+
+{% endif %}
+
+<!-- /#page-wrapper -->
+
+
+
+
+
+
+
+
+ 

@@ -1,0 +1,41 @@
+Celmedia\CrmCanjeadorCodigosBundle\Entity\Codigo:
+    type: entity
+    table: redeem_codigo
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        valor:
+            type: string
+            length: 45
+            fixed: false
+            nullable: false
+        estado:
+            type: integer
+            length: 1
+            fixed: true
+            nullable: true
+        puntos:
+            type: integer
+            length: 1
+            fixed: true
+            nullable: true
+
+        created:
+          type: date
+          gedmo:
+            timestampable:
+              on: create
+        updated:
+          type: datetime
+          gedmo:
+            timestampable:
+              on: update
+
+    lifecycleCallbacks:
+        prePersist: [preInsert]
+        preUpdate: [preUpdate]

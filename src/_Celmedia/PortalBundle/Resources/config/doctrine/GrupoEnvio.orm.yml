@@ -1,0 +1,30 @@
+Celmedia\PortalBundle\Entity\GrupoEnvio:
+    type: entity
+    table: grupo_envio
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        nombre:
+            type: string
+            nullable: false
+        descipcion:
+            type: text
+            nullable: false
+        fechaCreacion:
+            type: datetime
+            nullable: false
+        estado:
+            type: boolean
+            nullable: false
+        tipo:
+            type: integer
+            nullable: false
+            # 0 si es publica , 1 si es privada 
+  
+
+    lifecycleCallbacks: {  }

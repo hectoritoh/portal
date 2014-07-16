@@ -1,0 +1,88 @@
+{%   extends("CelmediaPortalSmsBundle::layout.html.twig") %}
+
+
+{% block contenido %}
+
+<div id="page-wrapper">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Portal SMS <small>Componer Mensaje</small></h1>
+      <ol class="breadcrumb">
+        <li ><i class="fa fa-home"></i> PortalSMS</li>
+        <li class="active"> Promociones</li>
+      </ol>
+
+    </div>
+  </div><!-- /.row -->
+
+  <div class="row">
+
+    <div class="col-lg-8 col-lg-offset-2">
+            <a href="{{path('mensaje') }}" style="text-decoration:none;">
+
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"> Mensaje</h3>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                  <div class="col-xs-6">
+                      <i class="fa fa-envelope-o fa-5x"></i>
+                  </div>
+
+                  <div class="col-xs-6 text-right">
+                      Podras enviar tus mensajes al publico deseado. Ingresa aqui!
+                      <i class="fa fa-arrow-circle-right"></i>
+                  </div>
+
+
+                </div>
+                 
+
+              </div>
+            </div>
+
+            </a>
+            
+
+    </div>
+    <div class="col-lg-8 col-lg-offset-2">
+
+            <a href="{{path('tarjeta') }}" style="text-decoration:none;">
+
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title"> Tarjeta Virtual</h3>
+                </div>
+                <div class="panel-body">
+                 
+                  <div class="row">
+                    <div class="col-xs-6">
+                         <i class="fa fa-credit-card fa-5x "></i>
+                    </div>
+
+                    <div class="col-xs-6 text-right">
+                        Podras enviar tu tarjeta virtual al publico deseado. Ingresa aqui!
+                        <i class="fa fa-arrow-circle-right"></i>
+                    </div>
+
+
+                </div>
+                 
+
+
+
+                </div>
+              </div>
+
+            </a>
+
+    </div>
+
+  </div><!-- /.row -->
+
+
+</div><!-- /#page-wrapper -->
+
+{% endblock %}

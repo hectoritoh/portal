@@ -1,0 +1,89 @@
+
+
+{% form_theme form 'CelmediaPortalBundle:Form:boostrap.form.html.twig' %}
+
+
+<div  class="container" >
+
+    <div  class="span5" > 
+
+        <form id="target" class="form-horizontal"  action="{{  path('target') }}" method="post" {{ form_enctype(form) }} >
+          {{ form_row(form.nombre ,  {'attr': {'class': 'form-control'}}  ) }}
+
+          {{ form_row(form.ciudades ,  {'attr': {'class': 'form-control selectpicker' , 'data-live-search' : true  }}  ) }}
+
+
+          <div class="control-group">
+            <label class="control-label" >Edad</label>
+            <div class="controls">
+                <div class="input-prepend">
+                    <label for="">Desde</label>     
+                    {{ form_widget(form.edadMinima ,  {'attr': {'style': 'width:100px;'}}  ) }}
+                </div>
+                <div class="input-append">
+                    <label for="">Hasta</label>     
+                    {{ form_widget(form.edadMaxima ,  {'attr': {'style': 'width:100px;'}}  ) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" >Genero</label>
+            <div class="controls">
+                <div class="btn-group" >
+                    <button id="generoTodos" type="button" class="btn btn-genero" onclick='$("#form_genero").val("0")' ><i class="fa fa-users"></i> Todos</button>
+                    <button id="generoMasculino" type="button" class="btn btn-genero"  onclick='$("#form_genero").val("1")' ><i class="fa fa-male"></i> Hombres</button>
+                    <button id="generoFemenino" type="button" class="btn btn-genero"  onclick='$("#form_genero").val("2")'  ><i class="fa fa-female"></i> Mujeres</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="form_fechaCumpleanos">Que cumplen el</label>
+            <div class="controls input-group">
+            {{ form_widget(form.fechaCumpleanos ,  {'attr': {'class': 'form-control form_datetime'  }  }  ) }}
+             
+         </div>
+     </div>
+
+
+
+ 
+
+
+{{  form_row(  form._token ) }}
+
+<div  style="display:none;" >
+  {{  form_row(  form.genero ) }}
+</div>
+
+</form>
+
+</div>
+
+
+</div>
+
+
+<div class="nextBox">
+
+    <div class="row">
+        <div class="span9">
+            <button class="btn btn-warning pull-right" onclick="$('#target').submit();" >Siguiente</button>  
+        </div>
+    </div>
+</div>
+
+
+
+{% if completado %}
+
+<script type="text/javascript" >
+    mostrarPaso("#paso2");  
+    $("#contenidoResumen").load('{{  path('resumen') }}');
+</script>
+
+{% endif %}
+
+
+<!-- /#page-wrapper -->

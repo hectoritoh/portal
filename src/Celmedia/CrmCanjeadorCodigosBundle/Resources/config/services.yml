@@ -1,0 +1,8 @@
+parameters:
+#    celmedia_crm_canjeador_codigos.example.class: Celmedia\CrmCanjeadorCodigosBundle\Example
+
+services:
+    hello_service:
+        class: Celmedia\CrmCanjeadorCodigosBundle\Services\HelloService
+        arguments: ["@mailer"]
+

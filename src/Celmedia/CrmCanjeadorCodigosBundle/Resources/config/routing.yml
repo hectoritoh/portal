@@ -1,0 +1,3 @@
+celmedia_crm_canjeador_codigos_homepage:
+    pattern:  /
+    defaults: { _controller: CelmediaCrmCanjeadorCodigosBundle:Default:index }

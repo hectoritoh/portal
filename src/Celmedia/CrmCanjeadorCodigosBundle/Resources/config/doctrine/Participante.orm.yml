@@ -1,0 +1,71 @@
+Celmedia\CrmCanjeadorCodigosBundle\Entity\Participante:
+    type: entity
+    table: redeem_participante
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        id_facebook:
+            type: string
+            length: 45
+            fixed: false
+            nullable: false
+        email:
+            type: string
+            length: 150
+            fixed: false
+            nullable: true
+        telefono:
+            type: string
+            length: 150
+            fixed: false
+            nullable: true
+        nombres:
+            type: string
+            length: 150
+            fixed: false
+            nullable: true
+        borrado:
+            type: integer
+            length: 1
+            fixed: true
+            nullable: true
+        puntaje:
+            type: integer
+            length: 1
+            fixed: true
+            nullable: true
+        created:
+          type: date
+          gedmo:
+            timestampable:
+              on: create
+        updated:
+          type: datetime
+          gedmo:
+            timestampable:
+              on: update
+
+    manyToMany:
+        codigosCanjeados:
+          targetEntity: Codigo
+          joinTable:
+            name: redeem_participante_codigo
+            joinColumns:
+              usuario_id:
+                referencedColumnName: id
+            inverseJoinColumns:
+              codigo_id:
+                referencedColumnName: id
+                unique: true
+
+
+
+
+    lifecycleCallbacks:
+        prePersist: [preInsert]
+        preUpdate: [preUpdate]

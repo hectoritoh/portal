@@ -1,0 +1,87 @@
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="span6">
+
+            <h2>Detalle de target</h2>
+            <ul>
+                <li  >Campana: <strong>{{  campana.nombre }}</strong></li>
+                <li   >Edades desde <strong>{{  campana.edadMinima }}</strong> hasta  <strong>{{  campana.edadMaxima }}</strong></li>     
+                <li   >Genero<strong>  {% if campana.genero == 0 %}Todos{% endif %}    {% if campana.genero == 1 %}Hombre{% endif %}{% if campana.genero == 2 %}Mujeres{% endif %}   </strong></li>     
+                <li   >Ciudades: <strong>   {% for ciudad in campana.ciudades %}
+				{{ ciudad.nombre }}
+				{% endfor %}  
+                </li>     
+            </ul>
+
+
+            <h2>Detalle de mensaje</h2>
+            <ul>
+
+
+        	{% if campana.mensaje.tipoMensaje == 1 %}
+                <li  >Tipo de mensaje: SMS   </strong></li> 
+                <li  >Fecha Envio: {{ campana.mensaje.fechaEnvio | date('Y-m-d H:i:s') }}   </strong></li>
+                <li  >Cantidad Mensajes: {{ campana.mensaje.cantidadMensajes  }}   </strong></li>
+                <li  >Contenido mensaje: {{ campana.mensaje.contenidoMensaje  }}   </strong></li>
+			{% endif %}
+
+            {% if campana.mensaje.tipoMensaje == 2 %}
+                <li  >Tipo de mensaje: Tarjeta   </strong></li> 
+                <li  >Fecha Vigente desde: {{ campana.mensaje.fechaIncio | date('Y-m-d')  }}   </strong></li>
+                <li  >Fecha Vigente hasta: {{ campana.mensaje.fechaFin | date('Y-m-d')  }}   </strong></li>
+                <li  >Fecha Envio: {{ campana.mensaje.fechaEnvio | date('Y-m-d H:i:s') }}   </strong></li>
+                <li  >Cantidad Mensajes: {{ campana.mensaje.cantidadMensajes  }}   </strong></li>
+                <li  >Contenido mensaje: {{ campana.mensaje.contenidoMensaje  }}   </strong></li>
+            {% endif %}
+
+            {% if campana.mensaje.tipoMensaje == 3 %}
+                <li  >Tipo de mensaje: Email   </strong></li>
+                <li  >Titulo: {{ campana.mensaje.nombre  }}   </strong></li>
+                <li  >Fecha Envio: {{ campana.mensaje.fechaEnvio | date('Y-m-d H:i:s') }}   </strong></li>
+                <li  >Cantidad Mensajes: {{ campana.mensaje.cantidadMensajes  }}   </strong></li>
+                <li  >Contenido mensaje: {{ campana.mensaje.contenidoMensaje  }}   </strong></li>
+            {% endif %}
+
+            {% if campana.mensaje.tipoMensaje == 4 %}
+                <li  >Tipo de mensaje: Tarjeta Email   </strong></li>
+                <li  >Titulo: {{ campana.mensaje.nombre  }}   </strong></li>
+                <li  >Fecha Envio: {{ campana.mensaje.fechaEnvio | date('Y-m-d H:i:s') }}   </strong></li>
+                <li  >Cantidad Mensajes: {{ campana.mensaje.cantidadMensajes  }}   </strong></li>
+                <li  >Contenido mensaje: {{ campana.mensaje.contenidoMensaje  }}   </strong></li>
+            {% endif %}
+
+
+
+
+            </ul>
+
+        </div>
+
+
+    </div>
+    
+    <div class="row-fluid" >
+        <div   class="span10" >
+              <h2>Presiona finalizar para comenzar el envio de mensajes</h2>
+            <p>
+                <button class="btn btn-large btn-success pull-right" type="button"  onclick="  window.location = '{{  path('finalizar') }}'" >Confirmar envio</button>
+            </p>
+        </div>
+    </div>
+    
+    
+</div>
+
+<div class="nextBox">
+    <div class="row">
+        <div class="span2">
+            <button class="btn btn-warning pull-right" onclick="mostrarPaso('#paso2', this);" >Regresar</button>  
+        </div>
+    </div>
+</div>
+
+
+

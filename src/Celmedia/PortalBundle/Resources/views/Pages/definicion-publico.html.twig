@@ -1,0 +1,168 @@
+{%   extends("CelmediaPortalSmsBundle::layout.html.twig") %}
+
+
+
+
+{% block contenido %}
+
+
+
+
+<div id="page-wrapper">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Portal SMS <small> Promociones</small></h1>
+      <ol class="breadcrumb">
+        <li><i class="fa fa-home"></i>Home</li>
+        <li class="active">Definición del Público</li>
+      </ol>
+
+    </div>
+  </div><!-- /.row -->
+  
+
+
+
+
+
+  <div class="row">
+
+    <div class="col-lg-8 col-lg-offset-2  ">
+
+      <form role="form" action="#" method="post" {{ form_enctype(form) }}>
+        <div class="panel panel-info">
+          <div class="panel-heading">TARGET</div>
+          <div class="panel-body">
+
+
+            <div class="row espaciador-form">
+              <div class="form-group">
+                <div class="col-lg-3">
+                  <label class="control-label" for="selectubicacion">Ubicación:</label>
+                </div>
+                <div class="col-lg-6">
+
+                  {{ form_widget(form.ubicacion ,  {'attr': {'class': 'form-control' }}) }}
+                  
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row espaciador-form">
+              <div class="form-group">
+                <div class="col-lg-3">
+                  <label class="control-label" for="selectedaddesde">Edad:</label>
+                </div>
+                <div class="col-lg-2">
+
+                  {{ form_widget(form.edadInicial ,  {'attr': {'class': 'form-control', 'onclick': 'obtenerEdadInicial();' } } ) }}
+
+                </div>
+                <div class="col-lg-1">
+                  <label style="line-height:29px;" class="control-label" for="selectedadhasta">Hasta</label>
+                </div>
+                <div class="col-lg-2">
+
+                  {{ form_widget(form.edadFinal ,  {'attr': {'class': 'form-control' , 'style':'padding:6px 0px;' , 'onclick': 'obtenerEdadFinal();'  }} ) }}
+
+                </div>
+
+              </div>
+            </div>
+
+
+            <div class="row espaciador-form">
+              <div class="form-group">
+                <div class="col-lg-3">
+                  <label class="control-label" >Género:</label>
+                </div>
+                <div class="col-lg-6">
+                  {{ form_widget(form.genero ,  {'attr': {'class': 'form-control'   , 'style': 'display:none;' , 'onclick':'obtenerGenero();'  }} ) }}
+                  <div class="btn-group">
+                    <button type="button" onclick="$('#form_genero').val('Todos')"  class="btn btn-default">Todos</button>
+                    <button type="button" onclick="$('#form_genero').val('Hombres')" class="btn btn-default">Hombres</button>
+                    <button type="button" onclick="$('#form_genero').val('Mujeres')" class="btn btn-default">Mujeres</button>
+                  </div> 
+                </div>
+              </div>
+            </div>
+
+            <div class="row espaciador-form">
+              <div class="form-group">
+                <div class="col-lg-3">
+                  <label class="control-label" for="fechanacimiento">Fecha de Nacimiento:</label>
+                </div>
+                <div class="col-lg-6" id="fecha-f">
+
+                  {{ form_widget(form.fechaNacimiento ,  {'attr': {'class': 'form-control' , 'style' : 'display:inline;width:90%;'}} ) }}
+
+                  <span class="add-on"><i class="fa fa-calendar"></i></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="row espaciador-form">
+              <div class="form-group">
+                <div class="col-lg-3">
+                  <label class="control-label" for="selectbd">Base de Datos:</label>
+                </div>
+                <div class="col-lg-6">
+
+                  {{ form_widget(form.clientes ,  {'attr': {'class': 'form-control' }} ) }}
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {{  form_row(  form._token ) }}
+        
+        <div class=" text-right">
+          
+          <button class="btn btn-warning" type="submit">Siguiente</button>
+          <button class="btn btn-info" type="reset">Clear</button> 
+        </div>
+         
+      </form>
+
+
+
+      
+    </div>
+    <div class="col-lg-8 col-lg-offset-2 " style="margin-top:15px;">
+      <div class="panel panel-info">
+        <div class="panel-heading">Tu anuncio se dirige a personas:</div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-3 col-lg-offset-2">
+              <i class="fa fa-signal fa-5x"></i>
+            </div>
+
+            <div class="col-xs-6 text-right">
+              <ul>
+                <li >Que viven en <strong id="ciudad"></strong></li>
+                <li >Exactamente de <strong id="edadInicial" > 12 </strong> <strong id="edadFinal">o más </strong> años</li>
+                <li >Que son<strong id="genero"></strong></li>
+              </ul>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div><!-- /#page-wrapper -->
+
+{% endblock %}
+
+
+

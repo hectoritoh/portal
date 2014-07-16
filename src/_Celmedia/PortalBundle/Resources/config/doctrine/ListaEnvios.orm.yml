@@ -1,0 +1,32 @@
+Celmedia\PortalBundle\Entity\ListaEnvios:
+    type: entity
+    table: lista_envios
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        numero:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+        campana:
+            type: text
+            nullable: false
+        url:
+            type: text
+            nullable: false
+        estado:
+            type: integer
+            nullable: false
+
+
+    # manyToOne:
+    #   campana:
+    #     targetEntity: Campana 
+    #     inversedBy: ciudades
+    lifecycleCallbacks: {  }

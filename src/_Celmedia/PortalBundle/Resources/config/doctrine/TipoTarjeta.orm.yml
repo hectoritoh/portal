@@ -1,0 +1,25 @@
+Celmedia\PortalBundle\Entity\TipoTarjeta:
+    type: entity
+    table: tipo_tarjeta
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        nombre:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+        imagen:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+        estado:
+            type: text
+            nullable: false
+    lifecycleCallbacks: {  }

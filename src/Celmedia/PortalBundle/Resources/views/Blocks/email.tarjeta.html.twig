@@ -1,0 +1,73 @@
+
+
+
+
+
+<h3>Campaña  "{{  campana.nombre }}" </h3>
+
+
+<div  class="container-fluid" >
+    <div  class="row-fluid" >
+        <div  class="span6" >
+
+            <div class="form_wrapper">
+
+  {% form_theme formulario 'CelmediaPortalBundle:Form:boostrap.form.html.twig' %}
+
+                <form class="form-horizontal" id="email_tarjeta_form"  action="{{  path('emailTarjeta') }}" method="post" {{ form_enctype(formulario) }} >
+
+    {{ form_row(formulario.nombre , {'label': 'Titulo'}   ) }}
+    {{ form_row(formulario.fechaEnvio   ) }}
+    {{ form_row(formulario.fechaIncio  ,  {'attr': {'class': ' fecha ' , 'readonly': 'readonly' , 'style':'cursor:pointer;' }} ) }}
+    {{ form_row(formulario.fechaFin  ,  {'attr': {'class': ' fecha ' , 'readonly': 'readonly' , 'style':'cursor:pointer;' }}  ) }}
+    {{ form_row(formulario.cantidadMensajes ) }}
+    {{ form_widget(formulario.contenidoMensaje , {value  : 'tarjeta'} ) }}
+    {{ form_row(formulario.tipo_tarjeta , {'attr': {'onchange': 'cargarImagenTarjeta(this)'} } ) }}
+
+    {{ form_row(  formulario._token ) }}
+
+                </form>
+
+
+
+                <div class="nextBox">
+                    <div class="row">
+                        <div class="span2">
+                            <button class="btn btn-warning pull-right" onclick="mostrarPaso('#paso2', this);" >Regresar</button>  
+                        </div>
+                        <div class="span10">
+                            <button class="btn btn-warning pull-right" type="button"   onclick="$('#email_tarjeta_form').submit();"  >Siguiente</button>  
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="span6" id="previewContainer" >
+            
+        </div>
+    </div> 
+</div>
+
+
+
+{% if completado %}
+
+<script  type="text/javascript" >
+    mostrarPaso("#paso3", undefined, "{{  path('resumen') }}");
+
+</script>
+
+
+{% endif %}
+
+<!-- /#page-wrapper -->
+
+
+
+
+
+
+
+

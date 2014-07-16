@@ -1,0 +1,128 @@
+  
+<div class="container-fluid" >
+
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="row-fluid seleccion_tipo_mensaje" onclick="mostrarPaso('#mensaje');"  >
+                <div class="span3 offset2 ">
+                {% image '@CelmediaPortalBundle/Resources/public/images/icono-mensaje.png' %}
+                 <img src="{{ asset_url }}" alt="" />
+                 {% endimage %}
+                 <h3 class="panel-title"> Mensaje</h3>
+             </div>
+             <div  class="span3 offset2" >
+                <div class="text-right">
+                    Podras enviar tus mensajes al publico deseado. Ingresa aqui!
+                    <i class="fa fa-arrow-circle-right"></i>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div> 
+
+<hr >
+
+
+<div class="row-fluid">
+    <div class="span12">
+
+        <div class="row-fluid seleccion_tipo_mensaje" onclick="mostrarPaso('#tarjeta');"  >
+            <div class="span3 offset2 ">
+                <i class="fa fa-credit-card fa-5x "></i>
+                <h3 class="panel-title"> Tarjetas</h3>
+            </div>
+
+            <div  class="span3 offset2" >
+                <div class="text-right">
+                    Podras enviar tu tarjeta virtual al publico deseado. Ingresa aqui!
+                    <i class="fa fa-arrow-circle-right"></i>
+                </div>
+            </div>
+        </div>
+
+    </div> 
+</div> 
+<hr >
+
+<div class="row-fluid">
+    <div class="span12">
+
+        <div class="row-fluid seleccion_tipo_mensaje"   onclick="mostrarPaso('#email');"   >
+        
+            <div class="span3 offset2 ">
+
+            {% image '@CelmediaPortalBundle/Resources/public/images/icono-correo.png' %}
+                <img src="{{ asset_url }}" alt="" />
+                {% endimage %}
+
+                <h3 class="panel-title"> Correo Electronico</h3>
+            </div>
+
+            <div  class="span3 offset2" >
+                <div class="text-right">
+                    Podras enviar tus correos al publico deseado. Ingresa aqui!
+                    <i class="fa fa-arrow-circle-right"></i>
+                </div>
+            </div>
+        </div>
+
+    </div> 
+</div> 
+<hr >
+
+<div class="row-fluid">
+    <div class="span12">
+
+        <div class="row-fluid seleccion_tipo_mensaje"     onclick="mostrarPaso('#emailTarjeta');"   >
+            <div class="span3 offset2 ">
+            {% image '@CelmediaPortalBundle/Resources/public/images/icono-tarjeta-email.png' %}
+              <img src="{{ asset_url }}" alt="" />
+              {% endimage %}
+              <h3 class="panel-title">Tarjetas Email</h3>
+          </div>
+
+          <div  class="span3 offset2" >
+            <div class="text-right">
+                Podras enviar tus correos al publico deseado. Ingresa aqui!
+                <i class="fa fa-arrow-circle-right"></i>
+            </div>
+        </div>
+    </div>
+
+</div> 
+</div> 
+<hr >
+
+<div class="row-fluid">
+    <div class="span12">
+
+        <div class="row-fluid seleccion_tipo_mensaje"   >
+            <div class="span3 offset2 ">
+                <i class="fa  fa-facebook fa-5x "></i>
+                <h3 class="panel-title"> Mensajes a facebook</h3>
+            </div>
+
+            <div  class="span3 offset2" >
+                <div class="text-right">
+                    Podras enviar tus correos al publico deseado. Ingresa aqui!
+                    <i class="fa fa-arrow-circle-right"></i>
+                </div>
+            </div>
+        </div>
+
+    </div> 
+</div> 
+
+</div>
+
+
+
+<div class="nextBox">
+
+    <div class="row">
+        <div class="span2">
+            <button class="btn btn-warning pull-right" onclick="mostrarPaso('#paso1');" >Regresar</button>  
+        </div>
+    </div>
+</div>
+

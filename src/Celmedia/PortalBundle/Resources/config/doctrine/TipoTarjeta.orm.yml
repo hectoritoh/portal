@@ -1,0 +1,32 @@
+Celmedia\PortalBundle\Entity\TipoTarjeta:
+    type: entity
+    table: tipo_tarjeta
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        nombre:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
+
+        estado:
+            type: text
+            nullable: false
+
+
+    oneToOne:
+      imagen:
+        targetEntity: Application\Sonata\MediaBundle\Entity\Media
+        cascade: ["persist"]
+        joinColumn:
+          name: media_id
+          referencedColumnName: id
+
+
+    lifecycleCallbacks: {  }

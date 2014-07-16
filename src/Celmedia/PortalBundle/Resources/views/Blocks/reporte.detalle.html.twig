@@ -1,0 +1,223 @@
+
+
+
+<div class="card">
+  <h3 class="card-heading simple">Detalle de la campaña "{{ campana.nombre }}"</h3>
+  <div class="card-body">
+    <div class="row-fluid">
+
+      <div class="span6">
+
+        <h2>Detalle de target</h2>
+        <ul>
+          <li  >Campana: <strong>{{  campana.nombre }}</strong></li>
+          <li   >Edades desde <strong>{{  campana.edadMinima }}</strong> hasta  <strong>{{  campana.edadMaxima }}</strong></li>     
+          <li   >Genero<strong>  {% if campana.genero == 0 %}Todos{% endif %}    {% if campana.genero == 1 %}Hombre{% endif %}{% if campana.genero == 2 %}Mujeres{% endif %}   </strong></li>     
+          <li   >Ciudades: <strong>   {% for ciudad in campana.ciudades %}
+            {{ ciudad.nombre }}
+            {% endfor %}  
+          </li>     
+        </ul>
+
+
+        <h2>Detalle de mensaje</h2>
+        <ul>
+
+         {% if campana.mensaje.tipoMensaje == 1 %}
+         <li  >Tipo de mensaje: SMS   </strong></li>
+         <li  >Nombre: {{ campana.mensaje.nombre  }}   </strong></li>
+         <li  >Fecha Envio: {{ campana.mensaje.fechaEnvio | date('Y-m-d H:i:s') }}   </strong></li>
+         <li  >Cantidad Mensajes: {{ campana.mensaje.cantidadMensajes  }}   </strong></li>
+         <li  >Contenido mensaje: {{ campana.mensaje.contenidoMensaje  }}   </strong></li>
+         {% endif %}
+
+         {% if campana.mensaje.tipoMensaje == 2 %}
+         <li  >Tipo de mensaje: Tarjeta   </strong></li>
+         <li  >Nombre: {{ campana.mensaje.nombre  }}   </strong></li>
+         <li  >Fecha Vigente desde: {{ campana.mensaje.fechaIncio | date('Y-m-d')  }}   </strong></li>
+         <li  >Fecha Vigente hasta: {{ campana.mensaje.fechaFin | date('Y-m-d')  }}   </strong></li>
+         <li  >Fecha Envio: {{ campana.mensaje.fechaEnvio | date('Y-m-d H:i:s') }}   </strong></li>
+         <li  >Cantidad Mensajes: {{ campana.mensaje.cantidadMensajes  }}   </strong></li>
+         <li  >Contenido mensaje: {{ campana.mensaje.contenidoMensaje  }}   </strong></li>
+         {% endif %}
+
+       </ul>
+
+     </div>
+
+
+
+   </div>
+   <br/>
+   <br/>
+   <br/>
+ </div>
+</div>
+
+
+
+
+
+
+<div class="card">
+  <h3 class="card-heading simple">Efectividad</h3>
+  <div class="card-body">
+    <div class="row-fluid">
+      <div class="span6">
+        <div id="efectividad_reporte"  style="position:relative;height:200px;" >
+
+
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="card">
+  <h3 class="card-heading simple">Detalle por usuario</h3>
+  <div class="card-body">
+    <div class="row-fluid">
+      <div class="span12">
+        <div  style="position:relative;height:200px;" >
+
+
+          <table class="table table-bordered table-striped  table-hover">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Interactividad</th>
+                <th>Nombre</th>
+                <th>Sexo</th>
+                <th>Edad</th>
+                <th colspan="2" style="text-align:center;"  >Redencion</th>
+              
+                <th colspan="5"   style="text-align:center;" >Mensajes</th>
+                <th></th>
+         
+              </tr>
+              <tr>
+               <th>Numero</th>
+               <th></th>
+               <th></th>
+               <th></th>
+               <th></th>
+               <th>Codigos</th>
+               <th>Especiales</th>
+               <th>SMS</th>
+               <th>Email</th>
+               <th>Tarjetas</th>
+               <th>FB</th>
+               <th>Total</th>
+             </tr>
+
+           </thead>
+           <tbody>
+            {% for envio in envios %}
+            <tr>
+              <td>{{ envio.numero }}</td>
+              <td></td>
+              <td>{{ envio.nombre }}</td>
+              
+              <td> 
+                {% if envio.sexo == '1' %}
+                Hombre  
+                {% else %}
+                Mujer  
+                {% endif %} 
+              </td>
+              <td> {{  envio.edad }}</td>
+              <td> 3</td>
+              <td> 1</td>
+              <td> 1/10</td>
+              <td>1/1 </td>
+              <td> 1/1</td>
+              <td>0/1 </td>
+              <td>3/10 </td>
+            </tr>
+
+            {% endfor %}
+
+
+          </tbody>
+        </table>
+
+
+      </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+  </div>
+</div>
+</div>
+
+
+
+<div class="card">
+  <h3 class="card-heading simple">Generos</h3>
+  <div class="card-body">
+    <div class="row-fluid">
+      <div class="span6">
+        <div id="generos_reporte"  style="position:relative;height:200px;" >
+
+
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="card">
+  <h3 class="card-heading simple">Edades</h3>
+  <div class="card-body">
+    <div class="row-fluid">
+      <div class="span6">
+        <div id="edades_reporte"  style="position:relative;height:200px;" >
+
+
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+    </div>
+  </div>
+</div>
+
+
+<div class="card">
+  <h3 class="card-heading simple">Operadoras</h3>
+  <div class="card-body">
+    <div class="row-fluid">
+      <div class="span6">
+        <div id="operadoras_reporte"  style="position:relative;height:200px;" >
+
+
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+    </div>
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript" >
+
+  crearReporte(   "{{ path('reporte_data' , {id_campana: campana.id }) }}" ); 
+
+</script>

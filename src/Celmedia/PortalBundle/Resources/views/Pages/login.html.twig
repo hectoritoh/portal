@@ -1,0 +1,84 @@
+
+{%   extends("CelmediaPortalBundle::layout.plus.html.twig") %}
+
+
+
+{% block estilos %}
+{{  parent() }}
+
+<style type="text/css">
+  body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #E5E5E5;
+  }
+
+  .form-signin {
+    
+  
+   background-color: #FFF;
+   max-width: 350px;
+   padding: 19px 29px 29px;
+   margin: 0 auto 20px;
+   background-color: #fff;
+ 
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   border-radius: 3px;
+ }
+ .form-signin .form-signin-heading {
+   font-size: 24px;
+   font-weight: 300;
+ }
+
+ .form-signin .form-signin-heading,
+ .form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
+
+</style>
+
+{% endblock %}
+
+
+
+{% block contenido %}
+
+
+<!--login modal-->
+<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+       
+        <h1 class="text-center">Ingreso de usuarios</h1>
+      </div>
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Favor Ingrese</h2>
+        <input type="text" class="input-block-level" placeholder="Usuario">
+        <input type="password" class="input-block-level" placeholder="Password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Recordarme 
+        </label>
+        <button class="btn btn-primary" type="submit">
+          Login
+          <i class="icon-circle-arrow-right"></i>
+        </button>
+      </form>
+      <div class="modal-footer">
+        <div class="col-md-12">
+          {# <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button> #}
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
+
+{%  endblock %}

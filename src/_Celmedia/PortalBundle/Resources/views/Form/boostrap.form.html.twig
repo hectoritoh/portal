@@ -1,0 +1,78 @@
+
+
+{% block file_widget %}
+{% spaceless %}
+{% set type = type|default('file') %}
+
+<div class="fileUpload  ">
+	<span style="color:black;">  <i class="icon-picture"></i> 	
+	</span>
+	<input type="{{ type }}" {{ block('widget_attributes') }}  class="upload" {% if value is not empty %}value="{{ value }}" {% endif %}/>
+</div>
+
+{% endspaceless %}
+{% endblock file_widget %}
+
+
+
+
+{% block number_widget %}
+{% spaceless %}
+{# type="number" doesn't work with floats #}
+{% set type = type|default('text') %}
+<input type="{{ type }}" style="width:100px; height: 35px;" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+{% endspaceless %}
+{% endblock number_widget %}
+
+
+
+{% block integer_widget %}
+{% spaceless %}
+{% set type = type|default('number') %}
+<input type="{{ type }}" style="width:100px; height: 35px;" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+{% endspaceless %}
+{% endblock integer_widget %}
+
+
+
+
+
+{% block form_widget_simple %}
+{% spaceless %}
+{% set type = type|default('text') %}
+<input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+{% endspaceless %}
+{% endblock form_widget_simple %}
+
+
+
+{% block form_row %}
+{% spaceless %}
+<div class="control-group">
+	{{ form_label(form , null , { 'label_attr': {'class': 'control-label '  } }) }}
+	<div class="controls"  >
+		
+		{% if help is defined %}
+		<span class="help_text">{{ help }}</span>
+		{% endif %}
+
+		{% if help_bold is defined %}
+		<span style="font-weight:bold;color:black;" class="help_text">{{ help_bold }}</span>
+		{% endif %}
+
+		{{ form_widget(form ) }}
+
+		{% if help_bot is defined %}
+		<span class="help_text">{{ help_bot }}</span>
+		{% endif %}
+
+		<div  style="color:red;" >
+			{{ form_errors(form) }}
+		</div>
+	</div>	
+</div>
+
+
+
+{% endspaceless %}
+{% endblock form_row %}

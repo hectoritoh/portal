@@ -1,0 +1,134 @@
+
+landing:
+    path:   /
+    defaults:  { _controller: CelmediaPortalBundle:Default:landing }
+
+
+prueba:
+    path:      /prueba
+    defaults:  { _controller: CelmediaPortalBundle:Default:prueba }
+
+
+
+ingreso_check:
+    path:      /ingreso.check
+
+
+
+portal_home:
+    pattern:  /home
+    defaults: { _controller: CelmediaPortalBundle:Default:index }
+
+
+
+
+
+portal_login:
+    path:      /ingresar
+    defaults:  { _controller: CelmediaPortalBundle:Default:login }
+
+#portal_setup:
+#    path:      /setup
+#    defaults:  { _controller: CelmediaPortalBundle:Default:setup }
+
+portal_setup:
+    path:      /setup
+    defaults:  { _controller: CelmediaPortalBundle:Default:setup2 }
+
+target:
+    path:      /target
+    defaults:  { _controller: CelmediaPortalBundle:Default:targetBlock }
+
+mensaje:
+    path:      /mensaje
+    defaults:  { _controller: CelmediaPortalBundle:Default:mensaje }
+
+email:
+    path:      /email
+    defaults:  { _controller: CelmediaPortalBundle:Default:email }
+
+emailTarjeta:
+    path:      /emailTarjeta
+    defaults:  { _controller: CelmediaPortalBundle:Default:emailTarjeta }
+
+
+
+tarjeta:
+    path:      /tarjeta
+    defaults:  { _controller: CelmediaPortalBundle:Default:tarjeta }
+
+resumen:
+    path:      /resumen
+    defaults:  { _controller: CelmediaPortalBundle:Default:resumen }
+
+finalizar:
+    path:      /finalizar
+    defaults:  { _controller: CelmediaPortalBundle:Default:finalizar }
+
+
+
+
+clientes:
+    path:      /clientes
+    defaults:  { _controller: CelmediaPortalBundle:Default:clientes }
+
+
+clientes_form:
+    path:      /clientes_form
+    defaults:  { _controller: CelmediaPortalBundle:Default:clientesForm }
+
+
+
+
+mostrar_grupo_clientes:
+    path:      /clientes/{grupo}
+    defaults:  { _controller: CelmediaPortalBundle:Default:clientesPorGrupo }
+
+
+
+sendsms:
+    path:      /sendsms
+    defaults:  { _controller: CelmediaPortalBundle:Default:sendsms }
+
+sendmail:
+    path:      /sendmail
+    defaults:  { _controller: CelmediaPortalBundle:Default:sendmail }
+
+mailsample:
+    path:      /mailsample
+    defaults:  { _controller: CelmediaPortalBundle:Default:mailsample }
+
+
+campanas:
+    path:      /campanas
+    defaults:  { _controller: CelmediaPortalBundle:Default:campanas }
+
+
+
+
+
+reportes:
+    path:      /reportes
+    defaults:  { _controller: CelmediaPortalBundle:Default:reportes }
+
+
+detalle_campana:
+    path:      /detalle.campanas/{id_campana}
+    defaults:  { _controller: CelmediaPortalBundle:Default:detalleCampanas }
+
+
+detalle_reporte:
+    path:      /detalle.reporte/{id_campana}
+    defaults:  { _controller: CelmediaPortalBundle:Default:detalleReporte }
+
+reporte_data:
+    path:      /reporte.data/{id_campana}
+    defaults:  { _controller: CelmediaPortalBundle:Default:reporteData }
+
+
+
+
+
+ajax_get_tarjeta_preview:
+    path:   /tarjeta_img/{id_promocion}
+    defaults:  { _controller: CelmediaPortalBundle:Default:getImage, id_promocion: 2  }

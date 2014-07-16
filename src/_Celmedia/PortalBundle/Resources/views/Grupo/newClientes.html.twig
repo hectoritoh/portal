@@ -1,0 +1,88 @@
+{%   extends("CelmediaPortalSmsBundle::layout.html.twig") %}
+
+
+{% block contenido %}
+{% block body -%}
+<div id="page-wrapper">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Grupo <small>Mantenimiento</small></h1>
+      <ol class="breadcrumb">
+        <li class="active"><i class="fa fa-bullhorn"></i> Grupos</li>
+      </ol>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-lg-8">
+
+
+      {% if not form.vars.valid %}
+      <div class="alert alert-error">
+
+
+        <div class="alert alert-dismissable alert-danger">
+          <button data-dismiss="alert" class="close" type="button">×</button>
+          <strong>Error Ctm!</strong> {{ form_errors(form) }}
+
+        </div>
+
+      </div>
+      {% endif %}
+
+      
+
+      <div class="row">
+        <div class="col-lg-6">
+        
+
+         <form role="form" action="{{  path('grupo_subir_clientes' , { 'id' : 1 }) }}" method="post" {{ form_enctype(form) }}>
+
+          <div class="form-group">
+            {{ form_label(form.archivo) }}
+            {{ form_widget(form.archivo  , {'attr': {'class': ''}} ) }}
+            <p class="help-block">Example block-level help text here.</p>
+          </div>
+
+ 
+
+
+
+          {{  form_row(  form._token ) }}
+
+
+          <button class="btn btn-default" type="submit">Siguiente</button>
+          <button class="btn btn-default" type="reset">Clear</button>  
+
+        </form>
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+</div>
+
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('grupo') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+
+
+{{  data | raw }}
+
+
+</div>
+
+{% endblock %}
+
+{% endblock %}
+

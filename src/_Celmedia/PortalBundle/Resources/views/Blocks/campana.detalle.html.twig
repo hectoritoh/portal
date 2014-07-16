@@ -1,0 +1,55 @@
+<div class="card">
+    <h3 class="card-heading simple">Detalle de la campaña "{{ campana.nombre }}"</h3>
+    <div class="card-body">
+        <div class="row-fluid">
+
+            <div class="span6">
+
+                <h2>Detalle de target</h2>
+                <ul>
+                    <li  >Campana: <strong>{{  campana.nombre }}</strong></li>
+                    <li   >Edades desde <strong>{{  campana.edadMinima }}</strong> hasta  <strong>{{  campana.edadMaxima }}</strong></li>     
+                    <li   >Genero<strong>  {% if campana.genero == 0 %}Todos{% endif %}    {% if campana.genero == 1 %}Hombre{% endif %}{% if campana.genero == 2 %}Mujeres{% endif %}   </strong></li>     
+                    <li   >Ciudades: <strong>   {% for ciudad in campana.ciudades %}
+				{{ ciudad.nombre }}
+				{% endfor %}  
+                    </li>     
+                </ul>
+
+
+                <h2>Detalle de mensaje</h2>
+                <ul>
+
+
+        	{% if campana.mensaje.tipoMensaje == 1 %}
+                    <li  >Tipo de mensaje: SMS   </strong></li>
+                    <li  >Nombre: {{ campana.mensaje.nombre  }}   </strong></li>
+                    <li  >Fecha Envio: {{ campana.mensaje.fechaEnvio | date('Y-m-d H:i:s') }}   </strong></li>
+                    <li  >Cantidad Mensajes: {{ campana.mensaje.cantidadMensajes  }}   </strong></li>
+                    <li  >Contenido mensaje: {{ campana.mensaje.contenidoMensaje  }}   </strong></li>
+			{% endif %}
+
+			{% if campana.mensaje.tipoMensaje == 2 %}
+                    <li  >Tipo de mensaje: Tarjeta   </strong></li>
+                    <li  >Nombre: {{ campana.mensaje.nombre  }}   </strong></li>
+                    <li  >Fecha Vigente desde: {{ campana.mensaje.fechaIncio | date('Y-m-d')  }}   </strong></li>
+                    <li  >Fecha Vigente hasta: {{ campana.mensaje.fechaFin | date('Y-m-d')  }}   </strong></li>
+                    <li  >Fecha Envio: {{ campana.mensaje.fechaEnvio | date('Y-m-d H:i:s') }}   </strong></li>
+                    <li  >Cantidad Mensajes: {{ campana.mensaje.cantidadMensajes  }}   </strong></li>
+                    <li  >Contenido mensaje: {{ campana.mensaje.contenidoMensaje  }}   </strong></li>
+			{% endif %}
+
+                </ul>
+
+            </div>
+
+
+
+        </div>
+        <br/>
+        <br/>
+        <br/>
+    </div>
+</div>
+
+

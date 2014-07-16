@@ -1,0 +1,49 @@
+{%   extends("CelmediaPortalSmsBundle::layout.html.twig") %}
+
+
+{% block contenido %}
+
+{% block body -%}
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+          <h1>Envio de Campaña <small></small></h1>
+          <ol class="breadcrumb">
+            <li class="active"><i class="fa fa-bullhorn"></i> Envio de Campaña</li>
+            <li class=""> Mensaje</li>
+          </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <h3 class="panel-title">Envios Exitosos</h3>
+              </div>
+              <div class="panel-body">
+                
+                {{ envios_exitosos }}
+
+
+
+            </div>
+        </div>
+        <br />
+
+        <ul class="record_actions">
+            <li>
+                <a href="{{ path('campana') }}">
+                    Back to the list
+                </a>
+            </li>
+        </ul>
+              </div>
+    </div>
+</div>
+    
+
+{% endblock %}
+
+        
+{% endblock %}

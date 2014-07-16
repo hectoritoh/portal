@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Paigna principal de CRM interactivo">
+        <meta name="author" content="celmedia">
+
+        <title>CRM Interactivo</title>
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'> 
+        {% stylesheets 
+            '@CelmediaPortalBundle/Resources/public/landing/css/bootstrap.css'
+            '@CelmediaPortalBundle/Resources/public/font-awesome/css/font-awesome.css'
+            '@CelmediaPortalBundle/Resources/public/landing/css/landing-page.css'        
+            filter='cssrewrite'  %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#about">Home</a>
+                        </li>
+                        <li><a href="#services">Servicios</a>
+                        </li>
+                        <li><a href="#contactenos" role="button"  data-toggle="modal" >Contactenos</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+
+        <div class="intro-header">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="intro-message">
+                            <h1>CRM interactivo</h1>
+                            <h3>Celmedia</h3>
+                            <hr class="intro-divider">                     
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container -->
+
+        </div>
+        <!-- /.intro-header -->
+
+        <div class="content-section-a">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-5 col-sm-6">
+                        <hr class="section-heading-spacer">
+                        <div class="clearfix"></div>
+                        <h2 class="section-heading">Alcanza tu público objetivo 
+                            <br></h2>
+                        <p class="lead">Millones de personas utilizan sus teléfonos móviles diariamente, a través de nuestra plataforma de mensajería móvil, podrás llegar eficazmente a tu público objetivo en un nivel completamente nuevo.</p>
+                    </div>
+                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                       
+                        {% image '@CelmediaPortalBundle/Resources/public/landing/img/phones.png' %}
+                        <img class="img-responsive"  src="{{ asset_url }}" alt="Example" />
+                        {% endimage %}     
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container -->
+
+        </div>
+        <!-- /.content-section-a -->
+
+        <div class="content-section-b">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                        <hr class="section-heading-spacer">
+                        <div class="clearfix"></div>
+                        <h2 class="section-heading">Personaliza tus mensajes 
+                            <br></h2>
+                        <p class="lead">Con nuestro sistema podrás personalizar tus mensajes, crear encuestas, anunciar ofertas y promociones, enviadas directamente a los dispositivo móvil de tus clientes.</p>
+                    </div>
+                    <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                           {% image '@CelmediaPortalBundle/Resources/public/landing/img/doge.png' %}
+                        <img class="img-responsive"  src="{{ asset_url }}" alt="Example" />
+                        {% endimage %}    
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container -->
+
+        </div>
+        <!-- /.content-section-b -->
+
+        <div class="content-section-a">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-5 col-sm-6">
+                        <hr class="section-heading-spacer">
+                        <div class="clearfix"></div>
+                        <h2 class="section-heading">Informes y resultados de tus campañas
+                            <br></h2>
+                        <p class="lead">Accede a informes en tiempo real, que te permitirán optimizar y mejorar la calidad tus envíos.  Además podrás contar con reportes estadísticos de tus campañas anteriores.</p>
+                    </div>
+                    <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                        {% image '@CelmediaPortalBundle/Resources/public/landing/img/ipad.png' %}
+                        <img class="img-responsive" src="{{ asset_url }}" alt="Example" />
+                        {% endimage %}                        
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container -->
+
+        </div>
+        <!-- /.content-section-a -->
+
+        <div class="banner">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2>Accede a las funcionalides!:</h2>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="list-inline banner-social-buttons">
+                            <li><a href="{{  path('portal_home') }}" class="btn btn-default btn-lg"><i class="fa "></i> <span class="network-name">Comenzar ahora</span></a>
+                            </li>
+                         
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container -->
+
+        </div>
+        <!-- /.banner -->
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="list-inline">
+                            <li><a href="#">Home</a>
+                            </li>
+                            <li class="footer-menu-divider">&sdot;</li>
+                            <li><a href="#contactenos" role="button"  data-toggle="modal" >Contactenos</a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-muted small">Copyright &copy; Celmedia 2014. todos los derechos reservados</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div id="contactenos" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Contactanos</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" name="commentform" method="post" action="send_form_email.php">
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="first_name">Nombres</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Nombres"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="last_name">Apellidos</label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Apellidos"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="email">Correo</label>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Correo electronico"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="comment">Consulta</label>
+                                <div class="col-md-6">
+                                    <textarea rows="6" class="form-control" id="comments" name="comments" placeholder="Preguntanos"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-6">
+                                    <button type="submit" value="Submit" class="btn btn-custom pull-right">Enviar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!-- End of Modal body -->
+                </div><!-- End of Modal content -->
+            </div><!-- End of Modal dialog -->
+        </div><!-- End of Modal -->
+
+      {% javascripts
+    '@CelmediaPortalBundle/Resources/public/landing/js/jquery-1.10.2.js' 
+    '@CelmediaPortalBundle/Resources/public/landing/js/bootstrap.js' 
+     %}
+        <script  type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    </body>
+
+</html>

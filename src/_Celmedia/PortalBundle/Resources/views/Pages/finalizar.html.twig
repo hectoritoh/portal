@@ -1,0 +1,39 @@
+
+
+{%   extends("CelmediaPortalSmsBundle::layout.html.twig") %}
+
+
+{% block contenido %}
+
+
+<div class="row">
+      <div class="col-lg-12">
+         <h1>Portal Sms </h1>
+         <ol class="breadcrumb">
+            <li class="active"><i class="fa fa-bullhorn"></i> Proceso completado correctamente</li>
+         </ol>
+      </div>
+</div>
+
+
+
+<div id="page-wrapper">
+   <div class="row">
+      <div class="col-lg-10 col-lg-offset-1  ">
+         <div class="panel panel-default">
+            <div class="panel-heading">Exito</div>
+            <div class="panel-body">
+               <div class="alert alert-success">
+                  <p>Tus mensajes estas siendo enviados en este momento, una vez finalizado se habilitara una notificacion de que un nuevo reporte esta visible</p>
+               </div>                               
+            <div class="alert alert-default "    >
+               <button onclick="window.location = '{{ path('dashboard') }}' " type="button" class="btn btn-success pull-right" >Finalizar </button>  
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- /#page-wrapper -->
+
+{%  endblock %}
