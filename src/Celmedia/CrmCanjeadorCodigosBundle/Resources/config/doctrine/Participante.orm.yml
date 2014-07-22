@@ -13,13 +13,36 @@ Celmedia\CrmCanjeadorCodigosBundle\Entity\Participante:
             type: string
             length: 45
             fixed: false
-            nullable: false
+            nullable: true
+        id_twitter:
+            type: string
+            length: 45
+            fixed: false
+            nullable: true
+        ciudad:
+            type: string
+            length: 60
+            fixed: false
+            nullable: true
+        edad:
+            type: integer
+            nullable: true
         email:
             type: string
             length: 150
             fixed: false
             nullable: true
         telefono:
+            type: string
+            length: 150
+            fixed: false
+            nullable: true
+        sexo:
+            type: string
+            length: 150
+            fixed: false
+            nullable: true
+        operadora:
             type: string
             length: 150
             fixed: false
@@ -39,8 +62,14 @@ Celmedia\CrmCanjeadorCodigosBundle\Entity\Participante:
             length: 1
             fixed: true
             nullable: true
+        aplicacion:
+            type: integer
+            length: 1
+            fixed: true
+            nullable: true
+
         created:
-          type: date
+          type: datetime
           gedmo:
             timestampable:
               on: create

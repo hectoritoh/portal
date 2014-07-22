@@ -164,6 +164,12 @@ sonata_block:
 
 sonata_media:
     # if you don't use default namespace configuration
+
+    # class:
+    #     media:              Application\Sonata\MediaBundle\Entity\Media
+    #     gallery:            Application\Sonata\MediaBundle\Entity\Gallery
+    #     gallery_has_media:  Application\Sonata\MediaBundle\Entity\GalleryHasMedia
+
     #class:
     #    media: MyVendor\MediaBundle\Entity\Media
     #    gallery: MyVendor\MediaBundle\Entity\Gallery
@@ -171,7 +177,22 @@ sonata_media:
     default_context: default
     db_driver: doctrine_orm # or doctrine_mongodb, doctrine_phpcr
     contexts:
+        tarjetas:
+            download:
+                strategy: sonata.media.security.public_strategy
+                mode: http
+            providers:
+                - sonata.media.provider.image
+            formats:
+                preview:   { width: 100, quality: 100}
+                small:     { width: 200, quality: 100}
+                large:     { width: 600, quality: 100}
+
         default:  # the default context is mandatory
+            download:
+                strategy: sonata.media.security.superadmin_strategy
+                mode: http
+
             providers:
                 - sonata.media.provider.dailymotion
                 - sonata.media.provider.youtube
@@ -181,21 +202,16 @@ sonata_media:
             formats:
                 small: { width: 100 , quality: 70}
                 big:   { width: 500 , quality: 70}
-        tarjetas:
-            providers:
-                - sonata.media.provider.image
-
-            formats:
-                preview:   { width: 100, quality: 100}
-                small:     { width: 200, quality: 100}
-                large:     { width: 600, quality: 100}
-
-
-
 
     cdn:
         server:
-            path: http://localhost/portal/web/uploads/media # http://media.sonata-project.org/
+            path: /portal/web/uploads/media # http://media.sonata-project.org/
+            # path: sonata.media.cdn.server # http://media.sonata-project.org/
+
+
+    # cdn:
+    #     server:
+    #         path: http://localhost/portal/web/uploads/media # http://media.sonata-project.org/
 
     filesystem:
         local:
@@ -203,7 +219,7 @@ sonata_media:
             create:     false
 
 
-    providers:
-        image:
-            resizer: sonata.media.resizer.square
+    # providers:
+    #     image:
+    #         resizer: sonata.media.resizer.square
 

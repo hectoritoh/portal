@@ -2,7 +2,10 @@ parameters:
 #    celmedia_crm_canjeador_codigos.example.class: Celmedia\CrmCanjeadorCodigosBundle\Example
 
 services:
-    hello_service:
-        class: Celmedia\CrmCanjeadorCodigosBundle\Services\HelloService
-        arguments: ["@mailer"]
+  
 
+    celmedia_crm_canjeador_codigos.admin.aplicacion:
+        class: Celmedia\CrmCanjeadorCodigosBundle\Admin\AplicacionAdmin
+        arguments: [~, Celmedia\CrmCanjeadorCodigosBundle\Entity\Aplicacion, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Crm, label: Aplicacion}

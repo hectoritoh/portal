@@ -30,10 +30,26 @@
               </li>
 
 
-  						<li  {% if  app.request.get('_route') == 'celmedia_admin_theme_codigos' %}  class="active" {% endif %}    >
-  							<a href="{{  path('celmedia_admin_theme_codigos') }}" >
-  								<i class="icon-tags"></i>
-  								<span>Codigos</span>
+              <li  {% if  app.request.get('_route') == 'celmedia_admin_theme_codigos' %}  class="active" {% endif %}    >
+                <a href="{{  path('celmedia_admin_theme_codigos') }}" >
+                  <i class="icon-tags"></i>
+                  <span>Codigos</span>
+                </a>              
+              </li>
+
+              <li  {% if  app.request.get('_route') == 'celmedia_admin_theme_aplicaciones' %}  class="active" {% endif %}    >
+                <a href="{{  path('celmedia_admin_theme_aplicaciones') }}" >
+                  <i class="icon-adn"></i>
+                  <span>Aplicaciones</span>
+                </a>              
+              </li>
+
+         
+
+              <li  {% if  app.request.get('_route') == 'celmedia_admin_theme_enviar' %}  class="active" {% endif %}    >
+  							<a href="{{  path('celmedia_admin_theme_enviar') }}" >
+  								<i class="icon-envelope"></i>
+  								<span>Enviar Mensajes</span>
   							</a>	    				
   						</li>
 

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ff69f3b60eb755088dcff0dfe5a0ac0a",
+    "hash": "10041f8867f2bb6dd13f1b3a7bdcee61",
     "packages": [
         {
             "name": "ass/xmlsecurity",
@@ -1041,18 +1041,75 @@
             "time": "2014-06-03 19:53:45"
         },
         {
+            "name": "friendsofsymfony/jsrouting-bundle",
+            "version": "1.5.3",
+            "target-dir": "FOS/JsRoutingBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle.git",
+                "reference": "dade3bb0b21007e5c0fb40f203ed197841eb913c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSJsRoutingBundle/zipball/dade3bb0b21007e5c0fb40f203ed197841eb913c",
+                "reference": "dade3bb0b21007e5c0fb40f203ed197841eb913c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/console": "~2.0",
+                "symfony/framework-bundle": "~2.0",
+                "symfony/serializer": "~2.0",
+                "willdurand/jsonp-callback-validator": "~1.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "FOS\\JsRoutingBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "william.durand1@gmail.com",
+                    "homepage": "http://www.willdurand.fr"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSJsRoutingBundle/contributors"
+                }
+            ],
+            "description": "A pretty nice way to expose your Symfony2 routing to client applications.",
+            "homepage": "http://friendsofsymfony.github.com",
+            "keywords": [
+                "Js Routing",
+                "javascript",
+                "routing"
+            ],
+            "time": "2014-01-23 21:25:39"
+        },
+        {
             "name": "friendsofsymfony/rest-bundle",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "target-dir": "FOS/RestBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSRestBundle.git",
-                "reference": "d37f4410e6a97e81c720840b56e35c3a44942723"
+                "reference": "e3a28ebf74724a51a31d6142b002c0c9652f71a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/d37f4410e6a97e81c720840b56e35c3a44942723",
-                "reference": "d37f4410e6a97e81c720840b56e35c3a44942723",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/e3a28ebf74724a51a31d6142b002c0c9652f71a4",
+                "reference": "e3a28ebf74724a51a31d6142b002c0c9652f71a4",
                 "shasum": ""
             },
             "require": {
@@ -1117,7 +1174,7 @@
             "keywords": [
                 "rest"
             ],
-            "time": "2014-06-04 13:11:41"
+            "time": "2014-07-11 21:09:03"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -1930,6 +1987,17 @@
                 "xml"
             ],
             "time": "2013-12-05 14:36:11"
+        },
+        {
+            "name": "jquery/jquery",
+            "version": "1.10.2",
+            "dist": {
+                "type": "file",
+                "url": "http://code.jquery.com/jquery-1.10.2.js",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "library"
         },
         {
             "name": "knplabs/gaufrette",
@@ -3007,12 +3075,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "675c3a323ed8f30e2b28736b6186ad6729cf2971"
+                "reference": "9dd850c3fe3b7a2bd3b02cfe31399804fad1a497"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/675c3a323ed8f30e2b28736b6186ad6729cf2971",
-                "reference": "675c3a323ed8f30e2b28736b6186ad6729cf2971",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/9dd850c3fe3b7a2bd3b02cfe31399804fad1a497",
+                "reference": "9dd850c3fe3b7a2bd3b02cfe31399804fad1a497",
                 "shasum": ""
             },
             "require": {
@@ -3078,7 +3146,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2014-07-16 16:31:03"
+            "time": "2014-07-21 11:37:00"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -3668,12 +3736,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataMediaBundle.git",
-                "reference": "163f821277d4656b107e74f8469e516de83ea297"
+                "reference": "e598245228133f39969485f7e282925eb1836f25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataMediaBundle/zipball/163f821277d4656b107e74f8469e516de83ea297",
-                "reference": "163f821277d4656b107e74f8469e516de83ea297",
+                "url": "https://api.github.com/repos/sonata-project/SonataMediaBundle/zipball/e598245228133f39969485f7e282925eb1836f25",
+                "reference": "e598245228133f39969485f7e282925eb1836f25",
                 "shasum": ""
             },
             "require": {
@@ -3745,7 +3813,7 @@
                 "vimeo",
                 "youtube"
             ],
-            "time": "2014-07-05 16:04:11"
+            "time": "2014-07-21 20:53:25"
         },
         {
             "name": "sonata-project/notification-bundle",
@@ -4733,7 +4801,8 @@
         "sonata-project/easy-extends-bundle": 20,
         "sonata-project/media-bundle": 20,
         "sonata-project/intl-bundle": 20,
-        "mopa/bootstrap-bundle": 10
+        "mopa/bootstrap-bundle": 10,
+        "friendsofsymfony/jsrouting-bundle": 0
     },
     "platform": {
         "php": ">=5.3.3"

@@ -308,4 +308,172 @@ class Participante
     {
         // Add your code here
     }
+    /**
+     * @var string
+     */
+    private $sexo;
+
+    /**
+     * @var string
+     */
+    private $operadora;
+
+    /**
+     * @var integer
+     */
+    private $aplicacion;
+
+
+    /**
+     * Set sexo
+     *
+     * @param string $sexo
+     * @return Participante
+     */
+    public function setSexo($sexo)
+    {
+        $this->sexo = $sexo;
+    
+        return $this;
+    }
+
+    /**
+     * Get sexo
+     *
+     * @return string 
+     */
+    public function getSexo()
+    {
+        return $this->sexo;
+    }
+
+    /**
+     * Set operadora
+     *
+     * @param string $operadora
+     * @return Participante
+     */
+    public function setOperadora($operadora)
+    {
+        $this->operadora = $operadora;
+    
+        return $this;
+    }
+
+    /**
+     * Get operadora
+     *
+     * @return string 
+     */
+    public function getOperadora()
+    {
+        return $this->operadora;
+    }
+
+    /**
+     * Set aplicacion
+     *
+     * @param integer $aplicacion
+     * @return Participante
+     */
+    public function setAplicacion($aplicacion)
+    {
+        $this->aplicacion = $aplicacion;
+    
+        return $this;
+    }
+
+    /**
+     * Get aplicacion
+     *
+     * @return integer 
+     */
+    public function getAplicacion()
+    {
+        return $this->aplicacion;
+    }
+    /**
+     * @var string
+     */
+    private $id_twitter;
+
+    /**
+     * @var string
+     */
+    private $ciudad;
+
+    /**
+     * @var integer
+     */
+    private $edad;
+
+
+    /**
+     * Set id_twitter
+     *
+     * @param string $idTwitter
+     * @return Participante
+     */
+    public function setIdTwitter($idTwitter)
+    {
+        $this->id_twitter = $idTwitter;
+    
+        return $this;
+    }
+
+    /**
+     * Get id_twitter
+     *
+     * @return string 
+     */
+    public function getIdTwitter()
+    {
+        return $this->id_twitter;
+    }
+
+    /**
+     * Set ciudad
+     *
+     * @param string $ciudad
+     * @return Participante
+     */
+    public function setCiudad($ciudad)
+    {
+        $this->ciudad = $ciudad;
+    
+        return $this;
+    }
+
+    /**
+     * Get ciudad
+     *
+     * @return string 
+     */
+    public function getCiudad()
+    {
+        return $this->ciudad;
+    }
+
+    /**
+     * Set edad
+     *
+     * @param integer $edad
+     * @return Participante
+     */
+    public function setEdad($edad)
+    {
+        $this->edad = $edad;
+    
+        return $this;
+    }
+
+    /**
+     * Get edad
+     *
+     * @return integer 
+     */
+    public function getEdad()
+    {
+        return $this->edad;
+    }
 }

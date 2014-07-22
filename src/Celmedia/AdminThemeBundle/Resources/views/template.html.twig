@@ -52,22 +52,7 @@
   			<!-- Collect the nav links, forms, and other content for toggling -->
   			<div class="collapse navbar-collapse navbar-ex1-collapse">
   				<ul class="nav navbar-nav navbar-right">
-  				<!-- 	<li class="dropdown">
-
-  						<a href="javscript:;" class="dropdown-toggle" data-toggle="dropdown">
-  							<i class="icon-cog"></i>
-  							Settings
-  							<b class="caret"></b>
-  						</a>
-
-  						<ul class="dropdown-menu">
-  							<li><a href="account.html">Account Settings</a></li>
-  							<li><a href="javascript:;">Privacy Settings</a></li>
-  							<li class="divider"></li>
-  							<li><a href="javascript:;">Help</a></li>
-  						</ul>
-
-  					</li> -->
+  		 
 
   					<li class="dropdown">
 
@@ -98,9 +83,9 @@
   	</nav>
 
 
-
-    {% include 'CelmediaAdminThemeBundle:Blocks:submenu.html.twig' %}
-
+    {% if app.user %}
+      {% include 'CelmediaAdminThemeBundle:Blocks:submenu.html.twig' %}
+    {% endif %}
 
   	<div class="main">
 
@@ -341,7 +326,8 @@
 
   {% block js %}
       
-  
+  <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+  <script src="{{ path('fos_js_routing_js', {"callback": "fos.Router.setData"}) }}"></script>
 
 	{% javascripts 
 	'@CelmediaAdminThemeBundle/Resources/public/js/libs/jquery-1.9.1.min.js' 
@@ -349,9 +335,6 @@
 	'@CelmediaAdminThemeBundle/Resources/public/js/libs/bootstrap.min.js' 
 
 
-	'@CelmediaAdminThemeBundle/Resources/public/js/Application.js' 
-	'@CelmediaAdminThemeBundle/Resources/public/js/charts/area.js' 
-	'@CelmediaAdminThemeBundle/Resources/public/js/charts/donut.js' 
 	%}
 	<script type="text/javascript" src="{{ asset_url }}"></script>
 	{% endjavascripts %}
@@ -363,6 +346,13 @@
 {% block js_extra %}
     
 
+  {% javascripts 
+  '@CelmediaAdminThemeBundle/Resources/public/js/Application.js' 
+  '@CelmediaAdminThemeBundle/Resources/public/js/charts/area.js' 
+  '@CelmediaAdminThemeBundle/Resources/public/js/charts/donut.js' 
+  %}
+  <script type="text/javascript" src="{{ asset_url }}"></script>
+  {% endjavascripts %}
 
 {% endblock %}
 

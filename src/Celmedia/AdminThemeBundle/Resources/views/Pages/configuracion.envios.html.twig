@@ -1,0 +1,99 @@
+{% extends "CelmediaAdminThemeBundle::template.html.twig" %}
+
+{% block content %}
+
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="widget stacked">
+
+
+			<div class="widget-header">
+				<i class="icon-ok"></i>
+				<h3  id="mensajeTipoEnvio" >Selecion de tipo de mensaje</h3>
+			</div> <!-- /widget-header -->
+
+			<div  id="ContenidoMensajeTipoEnvio" class="widget-content">
+
+				<div class="shortcuts">
+
+					<a href="#"  onclick="setTipoDeEnvio(1 , 'SMS')"   class="shortcut"  style=" width: 150px;" >
+						<i class="shortcut-icon icon-envelope"></i>
+						<span class="shortcut-label">Mensaje de texto</span>
+					</a>
+					<a href="#"  onclick="setTipoDeEnvio(2 , 'Tarjeta SMS')"   class="shortcut" style=" width: 150px;">
+						<i class="shortcut-icon icon-envelope-alt"></i>
+						<span class="shortcut-label">Tarjeta sms</span>
+					</a>
+
+					<a   href="#"  onclick="setTipoDeEnvio(3 , 'Correo Electronico')"   class="shortcut" style=" width: 150px;">
+						<i class="shortcut-icon icon-envelope"></i>
+						<span class="shortcut-label">Correo Electronico</span>
+					</a>      
+					<a   href="#"  onclick="setTipoDeEnvio(4 , 'Tarjeta Email')"  class="shortcut" style=" width: 150px;">
+						<i class="shortcut-icon icon-envelope"></i>
+						<span class="shortcut-label">Tarjeta Email</span>
+					</a>       
+
+					<a   href="#"  onclick="setTipoDeEnvio(5 , 'Mensaje a facebook')"  class="shortcut" style=" width: 150px;" >
+						<i class="shortcut-icon icon-facebook"></i>
+						<span class="shortcut-label">Mensaje a facebook</span>
+					</a>       
+
+
+				</div> <!-- /shortcuts --> 
+			</div> <!-- /widget-content -->
+		</div> <!-- /widget -->					
+
+	</div> <!-- /col-md-12 -->     		
+</div> <!-- /row -->
+
+
+
+
+<div class="row">
+
+	<div class="col-md-12">
+
+		<div class="widget stacked">
+
+			<div class="widget-header">
+				<i class="icon-ok"></i>
+				<h3 id="envioNombre" >Configuracion de Mensaje a enviar</h3>
+			</div> <!-- /widget-header -->
+
+			<div   class="widget-content">
+
+				<div id="envioContenido" class="col-md-7">
+					{{  form(  formulario ) }}
+				</div>
+				<div id="envioDetalle" class="col-md-5">
+					
+				</div>
+			</div> <!-- /widget-content -->
+		</div> <!-- /widget -->					
+
+	</div> <!-- /col-md-12 -->     		
+</div> <!-- /row -->
+
+
+
+{% endblock %}
+
+{% block js %}
+      
+  {{  parent() }}
+
+	{% javascripts 
+	'@CelmediaAdminThemeBundle/Resources/public/js/envio_creacion.js' 
+	%}
+
+	<script type="text/javascript" src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+  
+  {% endblock %}
+
+{% block js_extra %}
+      
+      
+  {% endblock %}

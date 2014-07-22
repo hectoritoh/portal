@@ -25,11 +25,6 @@ class Campana
     private $fechaCumpleanos;
 
     /**
-     * @var \DateTime
-     */
-    private $fechaCreacion;
-
-    /**
      * @var integer
      */
     private $edadMinima;
@@ -55,14 +50,24 @@ class Campana
     private $objetivo;
 
     /**
+     * @var string
+     */
+    private $usuario;
+
+    /**
+     * @var \DateTime
+     */
+    private $created;
+
+    /**
+     * @var \DateTime
+     */
+    private $updated;
+
+    /**
      * @var \Celmedia\PortalBundle\Entity\Mensaje
      */
     private $mensaje;
-
-    /**
-     * @var \Celmedia\PortalBundle\Entity\Usuario
-     */
-    private $usuario;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -131,29 +136,6 @@ class Campana
     public function getFechaCumpleanos()
     {
         return $this->fechaCumpleanos;
-    }
-
-    /**
-     * Set fechaCreacion
-     *
-     * @param \DateTime $fechaCreacion
-     * @return Campana
-     */
-    public function setFechaCreacion($fechaCreacion)
-    {
-        $this->fechaCreacion = $fechaCreacion;
-    
-        return $this;
-    }
-
-    /**
-     * Get fechaCreacion
-     *
-     * @return \DateTime 
-     */
-    public function getFechaCreacion()
-    {
-        return $this->fechaCreacion;
     }
 
     /**
@@ -272,6 +254,75 @@ class Campana
     }
 
     /**
+     * Set usuario
+     *
+     * @param string $usuario
+     * @return Campana
+     */
+    public function setUsuario($usuario)
+    {
+        $this->usuario = $usuario;
+    
+        return $this;
+    }
+
+    /**
+     * Get usuario
+     *
+     * @return string 
+     */
+    public function getUsuario()
+    {
+        return $this->usuario;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return Campana
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+    
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     * @return Campana
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+    
+        return $this;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return \DateTime 
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
      * Set mensaje
      *
      * @param \Celmedia\PortalBundle\Entity\Mensaje $mensaje
@@ -292,29 +343,6 @@ class Campana
     public function getMensaje()
     {
         return $this->mensaje;
-    }
-
-    /**
-     * Set usuario
-     *
-     * @param \Celmedia\PortalBundle\Entity\Usuario $usuario
-     * @return Campana
-     */
-    public function setUsuario(\Celmedia\PortalBundle\Entity\Usuario $usuario = null)
-    {
-        $this->usuario = $usuario;
-    
-        return $this;
-    }
-
-    /**
-     * Get usuario
-     *
-     * @return \Celmedia\PortalBundle\Entity\Usuario 
-     */
-    public function getUsuario()
-    {
-        return $this->usuario;
     }
 
     /**

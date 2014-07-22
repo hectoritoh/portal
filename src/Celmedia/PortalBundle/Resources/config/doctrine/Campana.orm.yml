@@ -17,9 +17,6 @@ Celmedia\PortalBundle\Entity\Campana:
         fechaCumpleanos:
             type: datetime
             nullable: true 
-        fechaCreacion:
-            type: datetime
-            nullable: true 
         edadMinima:
             type: integer
             nullable: false
@@ -39,20 +36,22 @@ Celmedia\PortalBundle\Entity\Campana:
             length: 100
             fixed: false
             nullable: true
- 
-    # oneToMany:
-    #   ciudades:
-    #     targetEntity: Ciudad
-    #     mappedBy: campana
+        usuario:
+            type: string
+            length: 100
+            fixed: false
+            nullable: false
 
- 
-    manyToOne:
-      usuario:
-        targetEntity: Usuario
-        inversedBy: campanas
-        joinColumn:
-          name: usuario_id
-          referencedColumnName: id
+        created:
+          type: datetime
+          gedmo:
+            timestampable:
+              on: create
+        updated:
+          type: datetime
+          gedmo:
+            timestampable:
+              on: update
 
 
 

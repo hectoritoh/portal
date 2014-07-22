@@ -5,9 +5,9 @@ namespace Celmedia\CrmCanjeadorCodigosBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Codigo
+ * Aplicacion
  */
-class Codigo
+class Aplicacion
 {
     /**
      * @var integer
@@ -17,17 +17,17 @@ class Codigo
     /**
      * @var string
      */
-    private $valor;
+    private $nombre;
 
     /**
-     * @var integer
+     * @var string
      */
-    private $estado;
+    private $token;
 
     /**
-     * @var integer
+     * @var string
      */
-    private $puntos;
+    private $descripcion;
 
     /**
      * @var \DateTime
@@ -51,84 +51,84 @@ class Codigo
     }
 
     /**
-     * Set valor
+     * Set nombre
      *
-     * @param string $valor
-     * @return Codigo
+     * @param string $nombre
+     * @return Aplicacion
      */
-    public function setValor($valor)
+    public function setNombre($nombre)
     {
-        $this->valor = $valor;
-
+        $this->nombre = $nombre;
+    
         return $this;
     }
 
     /**
-     * Get valor
+     * Get nombre
      *
      * @return string 
      */
-    public function getValor()
+    public function getNombre()
     {
-        return $this->valor;
+        return $this->nombre;
     }
 
     /**
-     * Set estado
+     * Set token
      *
-     * @param integer $estado
-     * @return Codigo
+     * @param string $token
+     * @return Aplicacion
      */
-    public function setEstado($estado)
+    public function setToken($token)
     {
-        $this->estado = $estado;
-
+        $this->token = $token;
+    
         return $this;
     }
 
     /**
-     * Get estado
+     * Get token
      *
-     * @return integer 
+     * @return string 
      */
-    public function getEstado()
+    public function getToken()
     {
-        return $this->estado;
+        return $this->token;
     }
 
     /**
-     * Set puntos
+     * Set descripcion
      *
-     * @param integer $puntos
-     * @return Codigo
+     * @param string $descripcion
+     * @return Aplicacion
      */
-    public function setPuntos($puntos)
+    public function setDescripcion($descripcion)
     {
-        $this->puntos = $puntos;
-
+        $this->descripcion = $descripcion;
+    
         return $this;
     }
 
     /**
-     * Get puntos
+     * Get descripcion
      *
-     * @return integer 
+     * @return string 
      */
-    public function getPuntos()
+    public function getDescripcion()
     {
-        return $this->puntos;
+        return $this->descripcion;
     }
 
     /**
      * Set created
      *
      * @param \DateTime $created
-     * @return Codigo
+     * @return Aplicacion
      */
     public function setCreated($created)
     {
         $this->created = $created;
-
+    
         return $this;
     }
 
@@ -146,12 +146,12 @@ class Codigo
      * Set updated
      *
      * @param \DateTime $updated
-     * @return Codigo
+     * @return Aplicacion
      */
     public function setUpdated($updated)
     {
         $this->updated = $updated;
-
+    
         return $this;
     }
 

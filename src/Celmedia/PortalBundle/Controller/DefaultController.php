@@ -284,7 +284,7 @@ public function targetBlockAction(Request $request) {
     $em = $this->getDoctrine()->getManager();
     $usuario = $this->get('security.context')->getToken()->getUser();
     $campana = $em->getRepository('CelmediaPortalBundle:Campana')->findOneBy(
-        array("estado" => 1, "usuario" => $usuario)
+        array("estado" => 1, "usuario" => $usuario->getUsername())
         );
 
     if (!$campana)

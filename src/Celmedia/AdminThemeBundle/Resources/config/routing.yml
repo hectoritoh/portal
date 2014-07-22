@@ -10,3 +10,33 @@ celmedia_admin_theme_codigos:
     path:     /manager/codigos
     defaults: { _controller: CelmediaAdminThemeBundle:Default:codigos }
 
+
+celmedia_admin_theme_aplicaciones:
+    path:     /manager/aplicacion
+    defaults: { _controller: CelmediaAdminThemeBundle:Default:aplicaciones }
+
+
+
+celmedia_admin_theme_campana:
+    path:     /manager/campana
+    defaults: { _controller: CelmediaAdminThemeBundle:Default:campanas }
+
+
+
+celmedia_admin_theme_enviar:
+    path:     /manager/crear/envio
+    defaults: { _controller: CelmediaAdminThemeBundle:Default:envios }
+
+
+
+celmedia_admin_theme_get_tipo_mensaje_form:
+    path:      /manager/tipo_mensaje/{id_tipo}
+    defaults:  { _controller: CelmediaAdminThemeBundle:Default:getTipoMensajeForm }
+    options:
+        expose: true
+
+celmedia_admin_theme_get_tipo_mensaje_image:
+    path:      /manager/tipo_mensaje_imagen/{id_tipo}
+    defaults:  { _controller: CelmediaAdminThemeBundle:Default:getMensajeImagenForm }
+    options:
+        expose: true

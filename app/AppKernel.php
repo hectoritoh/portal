@@ -61,6 +61,10 @@ class AppKernel extends Kernel {
 
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Celmedia\AdminThemeBundle\CelmediaAdminThemeBundle(),
+            // new Genemu\Bundle\FormBundle\GenemuFormBundle(),
+
+
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
 
             );
 

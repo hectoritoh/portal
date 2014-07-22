@@ -1,0 +1,39 @@
+Celmedia\CrmCanjeadorCodigosBundle\Entity\Aplicacion:
+    type: entity
+    table: redeem_aplicacion
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        nombre:
+            type: string
+            length: 45
+            fixed: false
+            nullable: false
+        token:
+            type: string
+            fixed: true
+            nullable: false
+        descripcion:
+            type: text
+            fixed: true
+            nullable: true
+
+        created:
+          type: datetime
+          gedmo:
+            timestampable:
+              on: create
+        updated:
+          type: datetime
+          gedmo:
+            timestampable:
+              on: update
+
+    lifecycleCallbacks:
+        prePersist: [preInsert]
+        preUpdate: [preUpdate]

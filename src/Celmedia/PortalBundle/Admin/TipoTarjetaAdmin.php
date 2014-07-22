@@ -26,7 +26,7 @@ class TipoTarjetaAdmin extends Admin {
 ->add('estado', 'choice', array('choices' => array('1' => 'Activo', '0' => 'Inactivo')))
         ->add('imagen', 'sonata_media_type', array(
            'provider' => 'sonata.media.provider.image',
-           'context'  => 'tarjeta'
+           'context'  => 'tarjetas'
            ))
              //if no type is specified, SonataAdminBundle tries to guess it
             ;
