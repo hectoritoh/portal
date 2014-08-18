@@ -1,0 +1,112 @@
+{% extends "CelmediaAdminThemeBundle::template.html.twig" %}
+
+
+{% block css %}
+
+  {% stylesheets 
+  'bundles/celmediaadmintheme/css/bootstrap.min.css' 
+  'bundles/celmediaadmintheme/css/bootstrap-responsive.min.css' 
+  'bundles/celmediaadmintheme/css/font-awesome.min.css' 
+  'bundles/celmediaadmintheme/css/ui-lightness/jquery-ui-1.10.0.custom.min.css' 
+  'bundles/celmediaadmintheme/css/base-admin-3.css' 
+  'bundles/celmediaadmintheme/css/base-admin-3-responsive.css' 
+  'bundles/celmediaadmintheme/css/sign.css' 
+  'bundles/celmediaadmintheme/css/custom.css' 
+  filter='cssrewrite' %}
+  <link rel="stylesheet" href="{{ asset_url }}" />
+  {% endstylesheets %}
+{% endblock %}
+
+
+
+
+
+
+{% block content %}
+
+{% if error %}
+    <div>{{ error.message }}</div>
+{% endif %}
+
+
+ 
+
+<div class="account-container stacked">
+  
+  <div class="content clearfix">
+    
+    <form action="{{ path('login_check') }}" method="post">
+    
+      <h1>Acceso a sistema</h1>    
+      
+      <div class="login-fields">
+        
+        <p>Ingresa con tus credenciales:</p>
+        
+        <div class="field">
+          <label for="username">Usuario:</label>
+          <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Username" class="form-control input-lg username-field" />
+        </div> <!-- /field -->
+        
+        <div class="field">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="_password" value="" placeholder="Password" class="form-control input-lg password-field"/>
+        </div> <!-- /password -->
+        
+      </div> <!-- /login-fields -->
+      
+      <div class="login-actions">
+        
+        <span class="login-checkbox">
+          <input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+          <label class="choice" for="Field">Recordar</label>
+        </span>
+                  
+       <input type="hidden" name="_target_path" value="/manager" />
+
+        <button class="login-action btn btn-primary">Login</button>
+        
+      </div> <!-- .actions -->
+      
+    
+      
+    </form>
+    
+  </div> <!-- /content -->
+  
+</div> <!-- /account-container -->
+
+
+<!-- Text Under Box -->
+<div class="login-extra">  
+  Remind <a href="#">Password</a>
+</div> <!-- /login-extra -->
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+{% block js_extra %}
+    
+
+
+  {% javascripts 
+  '@CelmediaAdminThemeBundle/Resources/public/js/demo/signin.js'
+  
+
+  %}
+  <script type="text/javascript" src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+
+  {% endblock %}
+
+
+  

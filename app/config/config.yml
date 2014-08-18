@@ -46,7 +46,7 @@ twig:
     form:
         resources:
             # other files
-            - 'SonataMediaBundle:Form:media_widgets.html.twig'
+            # - 'SonataMediaBundle:Form:media_widgets.html.twig'
 
 # Assetic Configuration
 assetic:

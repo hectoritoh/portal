@@ -4,6 +4,7 @@ namespace Celmedia\PortalBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Sonata\MediaBundle\Model\MediaInterface; 
+use Application\Sonata\MediaBundle\Entity\GalleryHasMedia;
 
 /**
  * TipoTarjeta
@@ -118,4 +119,50 @@ class TipoTarjeta
     }
 
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    protected $imagenes;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->imagenes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+     
+
+    /**
+     * Add imagenes
+     *
+     * @param \Application\Sonata\MediaBundle\Entity\Gallery $imagenes
+     * @return TipoTarjeta
+     */
+    public function addImagene(\Application\Sonata\MediaBundle\Entity\Gallery $imagenes)
+    {
+        $this->imagenes[] = $imagenes;
+    
+        return $this;
+    }
+
+    /**
+     * Remove imagenes
+     *
+     * @param \Application\Sonata\MediaBundle\Entity\Gallery $imagenes
+     */
+    public function removeImagene(\Application\Sonata\MediaBundle\Entity\Gallery $imagenes)
+    {
+        $this->imagenes->removeElement($imagenes);
+    }
+
+    /**
+     * Get imagenes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getImagenes()
+    {
+        return $this->imagenes;
+    }
 }

@@ -2,6 +2,8 @@ celmedia_admin_theme_homepage:
     path:     /manager
     defaults: { _controller: CelmediaAdminThemeBundle:Default:index }
 
+
+
 celmedia_admin_theme_participantes:
     path:     /manager/participantes
     defaults: { _controller: CelmediaAdminThemeBundle:Default:participantes }
@@ -40,3 +42,13 @@ celmedia_admin_theme_get_tipo_mensaje_image:
     defaults:  { _controller: CelmediaAdminThemeBundle:Default:getMensajeImagenForm }
     options:
         expose: true
+
+
+# security
+celmedia_admin_theme_login:
+    path:     /login
+    defaults: { _controller: CelmediaAdminThemeBundle:Security:login }
+
+login_check:
+    path: /login_check
+

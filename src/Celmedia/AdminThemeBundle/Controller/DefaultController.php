@@ -124,24 +124,24 @@ public function getTipoMensajeFormAction($id_tipo ) {
 
     $mensaje = new Mensaje();
      
+   	$mensaje->setTipoMensaje($id_tipo);
 
-
-   $form = $this->createFormBuilder($mensaje)
-    ->add('fechaEnvio', 'datetime', array("widget" => "single_text", 'data' => new \DateTime(), 'format' => 'MM/dd/yyyy',)
-        )
-    ->add('nombre', 'text', array('required' => true ))
-    ->add('contenidoMensaje', 'hidden')
-    ->add('cantidadMensajes', 'number')
-    ->add('fechaIncio', 'datetime', array("widget" => "single_text", 'data' => new \DateTime(), 'format' => 'MM/dd/yyyy',)
-        )
-    ->add('fechaFin', 'datetime', array(
+   $form = $this->createFormBuilder($mensaje);
+    $form->add('fechaEnvio', 'datetime', array("widget" => "single_text", 'data' => new \DateTime(), 'format' => 'MM/dd/yyyy',)
+        );
+    $form->add('nombre', 'text', array('required' => true ));
+    $form->add('contenidoMensaje', 'textarea');
+    $form->add('cantidadMensajes', 'number');
+    $form->add('fechaIncio', 'datetime', array("widget" => "single_text", 'data' => new \DateTime(), 'format' => 'MM/dd/yyyy',)
+        );
+    $form->add('fechaFin', 'datetime', array(
         "widget" => "single_text", 'data' => new \DateTime(), 'format' => 'MM/dd/yyyy',)
-    )
-    ->add('tipo_tarjeta', 'entity', array(
+    );
+    $form->add('tipo_tarjeta', 'entity', array(
         'class' => 'CelmediaPortalBundle:TipoTarjeta'
-        ))
-    ->add('save', 'submit')
-    ->getForm();
+        ));
+    $form->add('save', 'submit');
+    $form = $form->getForm();
 
 
     if ($request->isMethod('POST')) {

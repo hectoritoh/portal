@@ -29,4 +29,21 @@ Celmedia\PortalBundle\Entity\TipoTarjeta:
           referencedColumnName: id
 
 
+
+    manyToMany:
+
+      imagenes:
+        targetEntity: Application\Sonata\MediaBundle\Entity\Gallery
+        joinTable:
+          name: vehiculo_imagen
+          joinColumns:
+            id_vehiculo:
+              referencedColumnName: id
+          inverseJoinColumns:
+            id_imagen:
+              referencedColumnName: id
+        cascade: ["persist"]
+
+
+
     lifecycleCallbacks: {  }

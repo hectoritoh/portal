@@ -28,6 +28,17 @@ class TipoTarjetaAdmin extends Admin {
            'provider' => 'sonata.media.provider.image',
            'context'  => 'tarjetas'
            ))
+        ->add('imagenes', 'sonata_type_collection', array('by_reference' => false), array('edit' => 'inline'))
+        // ->add('imagenes', 'sonata_type_collection', array(
+        //         'cascade_validation' => true,
+        //         ), array(
+        //         'edit' => 'inline',
+        //         'inline' => 'table',
+           
+        //         'link_parameters' => array('context' => 'default')
+                
+        //         )
+        //     )
              //if no type is specified, SonataAdminBundle tries to guess it
             ;
         }
